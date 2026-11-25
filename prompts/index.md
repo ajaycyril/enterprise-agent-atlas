@@ -23,6 +23,10 @@ has_children: true
 | [Delivery and operations](delivery-and-operations-recipes.md) | 3 | Specify an enterprise release gate, Design a pilot and rollout, Plan an incident and support handover |
 | [Project building](project-building-recipes.md) | 2 | Write the smallest credible project brief, Choose references for a coding model |
 
+## Evaluation prompts
+
+Use the [agent evals guide and six-case dataset](../evals/index.md), [paired model-comparison prompt](agent-workflows-recipes.md#evaluate-prompts-across-models) and [retrieval and citation prompt](agent-workflows-recipes.md#evaluate-retrieval-and-citations) to design the experiment and grade its results.
+
 ## Full-project briefs
 
 - [Live handoffs and agent decisions](00-live-agent-motion.md)

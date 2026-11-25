@@ -29,6 +29,8 @@ The word “enterprise” becomes actionable when a reviewer can point to a cont
 
 ## Evaluation design
 
+Start with the [AI agent evals guide](../evals/index.md) for a worked release decision, reusable booking cases and tool selection.
+
 Version the case set, rubric, model identifier, provider, policy, prompts and tool schemas together. Start with human-labeled cases covering common outcomes and high-consequence boundaries. A release dataset needs enough examples per route and tenant context to expose failures.
 
 | Measure | Calculation or test | Example acceptance criterion for a pilot |

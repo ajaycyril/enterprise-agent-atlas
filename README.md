@@ -10,6 +10,7 @@ New to the collection? Read Ajay Cyril’s DigDeep Tech field guide, [How to Bui
 | Which architecture should own state, identity and recovery? | [12 workload reference architectures](architectures/reference-index.md), [three execution-stack blueprints](architectures/choose-a-stack.md) and [24 system design patterns](architectures/pattern-library.md) |
 | How should an agent look while it works? | [Motion library comparison](design/agent-animation.md), [12 direct design references](design/reference-gallery.md) and [frontend playbook](design/frontend-playbook.md) |
 | What would the customer actually experience? | [UI, UX and service design](experience/index.md), including a worked cross-channel service blueprint |
+| How do I know whether the agent works? | [AI agent evals](evals/index.md), [six labeled cases](evals/booking-cases.csv), scoring rules, tool choices and a release decision |
 | What security belongs in the first design? | [Basic security architectures](operations/security-foundations.md), followed by [release evidence and evaluation](operations/security-and-release.md) |
 | What should I ask Claude or ChatGPT? | [40 task pairs and seven full-project briefs](prompts/index.md), [current model guide](prompts/model-guide.md) and [prompt data](prompts/recipes.json) |
 
