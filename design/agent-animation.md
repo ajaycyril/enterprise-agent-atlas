@@ -52,3 +52,57 @@ For a browser-based agent console with dozens of visible nodes, choose **React F
 ## Build-brief fragment
 
 > On the first screen, show the active case and the agent performing work. Implement React Flow 13 custom nodes and edges and Motion for React. Drive a one-shot packet along each actual sender-to-recipient path on a committed transfer event. Two concurrently active specialists must be independently selectable. Each exchange reveals a sanitized payload, routing reason, source artifacts and outcome. Include retry, partial join, approval wait and receipt states. Add pause, one-event step, seek, follow-latest and reduced motion. Verify that repeating the same event ID never animates twice during live delivery, an early result never completes a pending join, and reopening a historical run never dispatches a tool.
+
+## Community animation and design toolkit (25 November 2026)
+
+Discovery sources: [@flxrnc](https://x.com/flxrnc/status/2124231511499026436), supplied screenshots including [@renproton](https://x.com/renproton). Deduplicated candidates below; repository paths reconstructed from visible names and prior extraction, not individually verified. Check maintenance, license, security and compatibility before adoption. Skills are agent guidance, not runtime libraries.
+
+### Live UI motion
+
+- [Magic UI](https://github.com/magicuidesign/magicui)
+- [GSAP](https://github.com/greensock/GSAP)
+- [Motion](https://github.com/motiondivision/motion)
+- [Ola](https://github.com/franciscop/ola)
+- [Anime.js](https://github.com/juliangarnier/anime)
+- [Shifty](https://github.com/jeremyckahn/shifty)
+- [TweenJS](https://github.com/CreateJS/TweenJS)
+- [Lottie Web](https://github.com/airbnb/lottie-web)
+
+### Design agent guidance
+
+- [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+- [Taste Skill](https://github.com/Leonxlnx/taste-skill)
+- [Impeccable](https://github.com/pbakaus/impeccable)
+- [Hallmark](https://github.com/Nutlope/hallmark)
+- [Open Design](https://github.com/nexu-io/open-design)
+
+### 2D and 3D scenes
+
+- [Two.js](https://github.com/jonobr1/two.js)
+- [Konva](https://github.com/konvajs/konva)
+- [LUME](https://github.com/lume/lume)
+- [Blender](https://github.com/blender/blender)
+- [Three.js](https://github.com/mrdoob/three.js)
+- [Blender MCP](https://github.com/ahujasid/mcp-for-blender)
+- [Godot](https://github.com/godotengine/godot)
+- [Babylon.js](https://github.com/BabylonJS/Babylon.js)
+- [Proton](https://github.com/drawcall/Proton)
+
+### Recorded demos and explainers
+
+- [huashu-motion](https://github.com/alchaincyf/huashu-motion)
+- [anything2explainer](https://github.com/Vincentwei1021/anything2explainer)
+- [OpenScreen](https://github.com/getopenscreen/openscreen)
+- [OneTake](https://github.com/feitangyuan/onetake)
+- [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)
+- [EffectCraft](https://github.com/storytold/effectcraft)
+- [ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+- [HyperFrames](https://github.com/heygen-com/hyperframes)
+- [Remotion](https://github.com/remotion-dev/remotion)
+- [Remotion Skills](https://github.com/remotion-dev/skills)
+- [Motion Canvas](https://github.com/motion-canvas/motion-canvas)
+- [Manim](https://github.com/ManimCommunity/manim)
+- [gifenc](https://github.com/mattdesl/gifenc)
+- [FFmpeg](https://github.com/FFmpeg/FFmpeg)
+
+Use existing Motion for live state changes, GSAP for authored replay when justified, and Magic UI selectively for status components. Keep particles tied to committed events, stop on failure or approval wait, and respect reduced motion. For portfolio video, choose Remotion or Motion Canvas, then export with FFmpeg or gifenc. Do not install competing engines indiscriminately.
