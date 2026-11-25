@@ -10,6 +10,8 @@ description: "Choose enterprise libraries, reference architectures, UX and secur
 
 A public field guide for people building enterprise software with AI. Choose a library, inspect a reference architecture, and adapt a prompt to a real project. Reviewed **25 November 2026**.
 
+New to the collection? Read Ajay Cyril’s DigDeep Tech field guide, [How to Build an Enterprise App With AI, From Brief to Production](https://digdeeptech.com/how-to-build-an-enterprise-app-with-ai/), for one worked example from the first brief through the release decision.
+
 | What are you deciding? | Start here |
 |---|---|
 | Which library fits this task? | [198 catalog entries](catalog/index.md), with tradeoffs, official references and prompt fragments. [CSV](catalog/tools.csv) · [JSON](catalog/tools.json) |
