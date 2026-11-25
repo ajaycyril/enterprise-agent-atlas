@@ -1,0 +1,19 @@
+title: Enterprise Agent Atlas
+description: A public research collection of enterprise app libraries, system design patterns, reference architectures, and Claude and ChatGPT prompts.
+url: https://ajaycyril.github.io
+baseurl: /enterprise-agent-atlas
+remote_theme: just-the-docs/just-the-docs@v0.11.1
+search_enabled: true
+heading_anchors: true
+permalink: pretty
+mermaid:
+  version: "11.12.0"
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-sitemap
+aux_links:
+  "GitHub repository":
+    - "https://github.com/ajaycyril/enterprise-agent-atlas"
+exclude:
+  - README.md

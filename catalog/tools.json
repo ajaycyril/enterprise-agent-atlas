@@ -1,0 +1,1985 @@
+{
+  "reviewed": "2026-11-25",
+  "tools": [
+    {
+      "name": "Next.js App Router",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Default",
+      "fit": "React application shell with server rendering, nested layouts and a backend for the frontend.",
+      "tradeoff": "Keep secrets in server modules. Move long runs into a durable execution service.",
+      "prompt": "Render the run header on the server and hydrate only the interactive graph and controls.",
+      "source": "https://nextjs.org/docs"
+    },
+    {
+      "name": "React",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Default",
+      "fit": "Composable client islands for a rich operator interface.",
+      "tradeoff": "A high-frequency trace can re-render the whole screen if state lives at the root.",
+      "prompt": "Subscribe each node to its own projected state and keep immutable event records outside the view.",
+      "source": "https://react.dev/versions"
+    },
+    {
+      "name": "Vite",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "Fast development and a static SPA when an existing API owns all business logic.",
+      "tradeoff": "Authentication callbacks, routing and deployment rewrites are separate choices.",
+      "prompt": "Ship the SPA from a CDN and point its typed API client at the regional backend.",
+      "source": "https://vite.dev/guide/"
+    },
+    {
+      "name": "Angular",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "Opinionated framework for teams with an established Angular platform and design system.",
+      "tradeoff": "React graph and chat widgets need equivalents or explicit integration boundaries.",
+      "prompt": "Use the existing Angular shell, routing and forms. Keep the run-event schema framework independent.",
+      "source": "https://angular.dev/overview"
+    },
+    {
+      "name": "Nuxt",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "Full-stack option for Vue teams needing server routes and hybrid rendering.",
+      "tradeoff": "Budget for Vue-native graph, form and component choices.",
+      "prompt": "Keep the same tenant-scoped HTTP and event contracts behind a Nuxt application.",
+      "source": "https://nuxt.com/docs/4.x/getting-started/introduction"
+    },
+    {
+      "name": "Tailwind CSS",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Default",
+      "fit": "Fast implementation of tokens, layouts, breakpoints and state styles.",
+      "tradeoff": "Unrestricted utility choices fragment color, spacing and density.",
+      "prompt": "Expose semantic CSS variables for canvas, surface, focus, critical, and selection. Use logical spacing for RTL.",
+      "source": "https://tailwindcss.com/docs"
+    },
+    {
+      "name": "shadcn/ui",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Default",
+      "fit": "Editable source components for a branded product with dialogs, sheets, comboboxes and sidebars.",
+      "tradeoff": "Your team owns edits and upstream merges. Record the chosen primitive family.",
+      "prompt": "Start with the sidebar, command, sheet and dialog components. Implement the same focus and density rules in each.",
+      "source": "https://ui.shadcn.com/docs"
+    },
+    {
+      "name": "Base UI",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Default",
+      "fit": "Headless React behavior under a custom skin, including the default foundation for new shadcn projects.",
+      "tradeoff": "Composition and slot APIs differ across primitive families.",
+      "prompt": "Choose the Base UI shadcn preset. Use documented trigger composition and test the focus return path.",
+      "source": "https://base-ui.com/react/overview/quick-start"
+    },
+    {
+      "name": "Radix Primitives",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Unstyled interactive primitives for an existing Radix-based component library.",
+      "tradeoff": "Mixing dialog or popover systems complicates portals, stacking and focus.",
+      "prompt": "Keep the existing Radix primitives for menus, dialogs and tooltips and share one overlay policy.",
+      "source": "https://www.radix-ui.com/primitives/docs/overview/introduction"
+    },
+    {
+      "name": "React Aria Components",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Accessible behavior for custom collections and internationalized forms with complex keyboard navigation.",
+      "tradeoff": "The team still owns styling, localization QA and assistive-technology testing.",
+      "prompt": "Use React Aria for the date range and selection controls. Test Arabic labels, keyboard selection and focus restoration.",
+      "source": "https://react-aria.adobe.com/"
+    },
+    {
+      "name": "Material UI",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "A consistent React product suite where Material patterns are already familiar.",
+      "tradeoff": "A proprietary visual identity may require theme work. Evaluate MUI X editions separately.",
+      "prompt": "Use one MUI theme for data entry, alerts and navigation. Document density and touch target overrides.",
+      "source": "https://mui.com/material-ui/getting-started/"
+    },
+    {
+      "name": "Mantine",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Broad React component coverage for internal admin apps with a small frontend team.",
+      "tradeoff": "A second full component kit increases CSS and visual drift.",
+      "prompt": "Build the settings console on Mantine and use its theme primitives throughout the form.",
+      "source": "https://mantine.dev/"
+    },
+    {
+      "name": "Carbon Design System",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Enterprise information density, data tables, accessibility guidance and consistent component vocabulary.",
+      "tradeoff": "Adopting its visual language works best when product and design agree to it.",
+      "prompt": "Refer to Carbon table selection, toolbar placement and side panels for operator workflows.",
+      "source": "https://carbondesignsystem.com/"
+    },
+    {
+      "name": "Motion for React",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Default",
+      "fit": "State-driven layout, entry and exit transitions for a live interface.",
+      "tradeoff": "Repeated layout animations compete with streaming updates. Respect reduced motion.",
+      "prompt": "Animate a handoff once when its persisted edge event arrives. Keep a static arrow and text for reduced motion.",
+      "source": "https://motion.dev/docs/react"
+    },
+    {
+      "name": "GSAP",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Seekable timelines for replay, with MotionPathPlugin for packets moving along curved SVG edges and ScrollTrigger for explainers.",
+      "tradeoff": "Use one clock per property. Keep live arrival order independent of presentation time and review licensing for redistribution.",
+      "prompt": "Map a recorded event sequence to timeline labels. Seek deterministically, restore node state on scrub and use a stationary directional label under reduced motion.",
+      "source": "https://gsap.com/docs/v3/GSAP/Timeline/"
+    },
+    {
+      "name": "Rive",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Designer-authored stateful animation for a device, robot or illustrated process.",
+      "tradeoff": "Requires an art asset, renderer budget and fallback semantics.",
+      "prompt": "Bind the device visual to idle, processing and fault states. Publish equivalent text and a static fallback.",
+      "source": "https://rive.app/docs/runtimes/web/web-js"
+    },
+    {
+      "name": "React Flow",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Default",
+      "fit": "Interactive dependency graphs with custom nodes, selection, pan and zoom.",
+      "tradeoff": "Layout and execution come from separate systems. Dense graphs need a timeline alternative.",
+      "prompt": "Use @xyflow/react for read-only execution topology. Inspect a node by mouse or keyboard and match its timeline row.",
+      "source": "https://reactflow.dev/"
+    },
+    {
+      "name": "ELK.js",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Automatic graph layout for branching plans or nested dependencies.",
+      "tradeoff": "Repeated layout causes jitter and main-thread stalls.",
+      "prompt": "Compute the layered layout in a worker on topology changes, then animate only the active edge.",
+      "source": "https://github.com/kieler/elkjs"
+    },
+    {
+      "name": "Apache ECharts",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Alternative",
+      "fit": "Linked time-series views, distributions and operational metrics.",
+      "tradeoff": "Highly configurable charts require deliberate units, missing-data handling and accessible summaries.",
+      "prompt": "Show queue wait and tool latency separately with p50 and p95. Provide a table for the selected time window.",
+      "source": "https://echarts.apache.org/en/index.html"
+    },
+    {
+      "name": "MapLibre GL JS",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Map rendering for fleet, incident and site operations with your own style and tile choices.",
+      "tradeoff": "Budget tile hosting, attribution and offline behavior separately.",
+      "prompt": "Cluster sites by zoom. Selecting a marker and selecting its table row must open the same incident.",
+      "source": "https://maplibre.org/maplibre-gl-js/docs/"
+    },
+    {
+      "name": "deck.gl",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "GPU-accelerated geospatial layers for dense telemetry and paths.",
+      "tradeoff": "Payload volume and GPU memory matter on low-end devices.",
+      "prompt": "Add a time-windowed trajectory layer over the basemap and bound the number of rendered points.",
+      "source": "https://deck.gl/"
+    },
+    {
+      "name": "React Three Fiber",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "React renderer for a real 3D inspection task or digital twin.",
+      "tradeoff": "3D scenes add asset weight and GPU load. Define what decision needs the extra dimension.",
+      "prompt": "Lazy-load the equipment view only on inspection, show loading state and offer a labeled 2D schematic.",
+      "source": "https://r3f.docs.pmnd.rs/getting-started/introduction"
+    },
+    {
+      "name": "TanStack Table",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Default",
+      "fit": "Headless sorting, filtering and column models for queues built to your own design system.",
+      "tradeoff": "You implement semantics, keyboard behavior, pagination UI and rendering.",
+      "prompt": "Build a URL-filtered queue with stable row IDs and preserve the selected run when the sort changes.",
+      "source": "https://tanstack.com/table/latest"
+    },
+    {
+      "name": "TanStack Virtual",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Specialist",
+      "fit": "Window long timelines and lists whose DOM cost becomes measurable.",
+      "tradeoff": "Dynamic row heights and keyboard focus require testing.",
+      "prompt": "Virtualize the event history, preserve the scroll anchor, and announce new rows without stealing focus.",
+      "source": "https://tanstack.com/virtual/latest"
+    },
+    {
+      "name": "AG Grid",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Alternative",
+      "fit": "Spreadsheet-like analysis with commercial options for pivoting, grouping and server-side row models.",
+      "tradeoff": "Check feature entitlement and licensing before choosing a grid module.",
+      "prompt": "Use Enterprise only when pivot or the Server-Side Row Model is required and licensed. Specify large-data tests.",
+      "source": "https://www.ag-grid.com/react-data-grid/community-vs-enterprise/"
+    },
+    {
+      "name": "TanStack Query",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Default",
+      "fit": "Server-state cache for authorized run lists, evidence and details.",
+      "tradeoff": "A query cache shared across tenant switches can expose stale data.",
+      "prompt": "Scope query keys to tenant and run, cancel stale queries on switch, and clear tenant data on sign-out.",
+      "source": "https://tanstack.com/query/latest"
+    },
+    {
+      "name": "React Hook Form",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Default",
+      "fit": "Performance-conscious forms for case intake and reviewer decisions.",
+      "tradeoff": "Client errors can drift from server validation.",
+      "prompt": "Validate on submit with the shared schema, retain typed fields after a server error and focus the first invalid control.",
+      "source": "https://react-hook-form.com/"
+    },
+    {
+      "name": "Zod",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Default",
+      "fit": "Runtime schemas at TypeScript boundaries for inputs, tool arguments and streamed events.",
+      "tradeoff": "Shape validation alone grants no authority over an object.",
+      "prompt": "Parse unknown payloads server-side, authorize referenced resources and reject unsupported event versions.",
+      "source": "https://zod.dev/"
+    },
+    {
+      "name": "XState",
+      "layer": "Frontend",
+      "category": "Data interaction",
+      "selection": "Specialist",
+      "fit": "Explicit client state machines for reconnect, review and replay controls.",
+      "tradeoff": "Duplicating the backend workflow in the browser creates conflicting states.",
+      "prompt": "Model only view modes and connection states in XState. Derive business status from ordered events.",
+      "source": "https://stately.ai/docs/xstate"
+    },
+    {
+      "name": "AI Elements",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Default",
+      "fit": "Editable UI components for messages, tool output, sources and AI-assisted workflows.",
+      "tradeoff": "Map runtime events to view models. Review components that display sensitive details.",
+      "prompt": "Use a tool card with name, elapsed time, scrubbed input summary and result link. Keep approvals server-authorized.",
+      "source": "https://elements.ai-sdk.dev/"
+    },
+    {
+      "name": "assistant-ui",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Alternative",
+      "fit": "Conversation-first React UI with thread primitives and runtime integration.",
+      "tradeoff": "A chat thread alone gives poor visibility into parallel work.",
+      "prompt": "Attach a thread to the selected run and preserve links from each tool result to its evidence.",
+      "source": "https://www.assistant-ui.com/docs"
+    },
+    {
+      "name": "CopilotKit",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Alternative",
+      "fit": "Embedded copilots that read scoped application context and expose interactive actions.",
+      "tradeoff": "Define exactly which state and actions a user session may share.",
+      "prompt": "Mount a contextual copilot on one case. Confirm each write through the same server policy as a normal button.",
+      "source": "https://www.copilotkit.ai/"
+    },
+    {
+      "name": "AG-UI",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Alternative",
+      "fit": "Event protocol between different agent runtimes and interactive clients.",
+      "tradeoff": "Choose supported event types and version an adapter to the business event log.",
+      "prompt": "Map run, tool and lifecycle updates through an adapter and preserve your own replay cursor.",
+      "source": "https://docs.ag-ui.com/introduction"
+    },
+    {
+      "name": "json-render",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Specialist",
+      "fit": "Schema-constrained generative UI from a registered component and action catalog.",
+      "tradeoff": "Models need a small catalog, strict validation and an ordinary fallback for invalid specs.",
+      "prompt": "Allow Summary, EvidenceList and ApprovalRequest. Validate props and authorize any action on the server.",
+      "source": "https://json-render.dev/"
+    },
+    {
+      "name": "A2UI",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Specialist",
+      "fit": "Declarative UI descriptions for an agent to request widgets across renderer implementations.",
+      "tradeoff": "Confirm schema and renderer compatibility before promising a cross-client feature.",
+      "prompt": "Negotiate a supported catalog, reject unknown actions and provide a generic read-only fallback.",
+      "source": "https://a2ui.org/"
+    },
+    {
+      "name": "Streamdown",
+      "layer": "Frontend",
+      "category": "Agent interfaces",
+      "selection": "Specialist",
+      "fit": "Streaming Markdown rendering when prose arrives incrementally.",
+      "tradeoff": "Treat links and embedded content as untrusted and constrain optional heavy renderers.",
+      "prompt": "Keep partial Markdown readable, restrict link schemes, and render code as text until the fence is closed.",
+      "source": "https://streamdown.ai/"
+    },
+    {
+      "name": "eve",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Default",
+      "fit": "Integrated TypeScript harness for Vercel-first apps with durable runs, subagents and approvals.",
+      "tradeoff": "Recently reached 1.0. Validate region, export, run retention, sandbox limits and your recovery path.",
+      "prompt": "Use eve as the sole run owner. Map its tool, approval and completion transitions to a durable public event log.",
+      "source": "https://eve.dev/"
+    },
+    {
+      "name": "LangGraph",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Default",
+      "fit": "Explicit state graphs for conditional routing, parallel branches, joins and human review.",
+      "tradeoff": "You own state schemas, checkpoint storage, tool idempotency and schema migrations.",
+      "prompt": "Use a persistent checkpointer, stable thread IDs and explicit branch joins. Resume an interrupted run after a worker restart.",
+      "source": "https://docs.langchain.com/oss/python/langgraph/overview"
+    },
+    {
+      "name": "Deep Agents",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "A higher-level harness on LangGraph for planning, context offload and subagent delegation.",
+      "tradeoff": "File tools and shared memory widen the permissions surface.",
+      "prompt": "Give the research specialist a run-scoped workspace, read-only tools and bounded delegation.",
+      "source": "https://docs.langchain.com/oss/python/deepagents/overview"
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Lightweight agents, handoffs, tools and tracing for teams already using OpenAI integrations.",
+      "tradeoff": "Choose durable storage and an execution recovery strategy for long business processes.",
+      "prompt": "Define triage and specialist handoffs, narrow tool grants and a typed final output. Test provider timeout and replay.",
+      "source": "https://openai.github.io/openai-agents-python/"
+    },
+    {
+      "name": "Vercel AI SDK",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Default",
+      "fit": "TypeScript model calls, tools and streaming for a bounded application agent.",
+      "tradeoff": "A tool loop still needs persistence, retry ownership and an explicit stopping policy.",
+      "prompt": "Use an allowlisted provider/model and typed tools. Bound steps, elapsed time and spend.",
+      "source": "https://ai-sdk.dev/docs/agents/overview"
+    },
+    {
+      "name": "Mastra",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Integrated TypeScript agents and explicit workflows for a Node team.",
+      "tradeoff": "Evaluate the hosting adapter, persistence and upgrade path together.",
+      "prompt": "Define a typed workflow with an evidence step and suspended review, then prove resume after redeploy.",
+      "source": "https://mastra.ai/docs"
+    },
+    {
+      "name": "Pydantic AI",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Typed Python dependencies and outputs for model-assisted domain workflows.",
+      "tradeoff": "Structured output can still be factually wrong. Track outcome quality on real examples.",
+      "prompt": "Return a typed recommendation with evidence IDs, verify those IDs and score support for each claim.",
+      "source": "https://ai.pydantic.dev/"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": ".NET and Python agent workflows for Microsoft-platform teams and existing Semantic Kernel or AutoGen estates.",
+      "tradeoff": "Migration and feature support differ by language and connector.",
+      "prompt": "Use the supported workflow primitives in one language. Pin connector versions and test checkpoint recovery.",
+      "source": "https://learn.microsoft.com/en-us/agent-framework/overview/"
+    },
+    {
+      "name": "Google ADK",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Agents, tools and workflow composition for teams using the Google agent ecosystem.",
+      "tradeoff": "Check session persistence, identity propagation and host-specific behavior.",
+      "prompt": "Give each specialist a bounded toolset and persist sessions in the approved regional service.",
+      "source": "https://google.github.io/adk-docs/"
+    },
+    {
+      "name": "Claude Agent SDK",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Tool-capable Claude agents for research, document work and controlled coding workflows.",
+      "tradeoff": "Permission mode, tool allowlists, execution environment and credentials need deliberate ownership.",
+      "prompt": "Give one worker an isolated workspace and approved read tools. Capture artifact references and redact traces.",
+      "source": "https://platform.claude.com/docs/en/agent-sdk/overview"
+    },
+    {
+      "name": "Amazon Bedrock AgentCore",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Choose a managed agent harness or host your own agent code in AgentCore Runtime.",
+      "tradeoff": "The managed harness and runtime expose different control points. Check regional availability by service.",
+      "prompt": "Document which layer owns the loop, where sessions live and how tool calls inherit scoped identity.",
+      "source": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/harness-vs-runtime.html"
+    },
+    {
+      "name": "MCP",
+      "layer": "Agent execution",
+      "category": "Protocols & tools",
+      "selection": "Specialist",
+      "fit": "Standard interface for tool and resource servers shared across clients.",
+      "tradeoff": "Protocol compatibility and tool discovery do not establish tenant or action authority.",
+      "prompt": "Pin a protocol revision, verify server identity, allowlist tools, and bind credentials to the tenant.",
+      "source": "https://modelcontextprotocol.io/docs/learn/architecture"
+    },
+    {
+      "name": "A2A",
+      "layer": "Agent execution",
+      "category": "Protocols & tools",
+      "selection": "Specialist",
+      "fit": "Interoperability between independently deployed agents with task lifecycles.",
+      "tradeoff": "In-process specialists rarely justify protocol negotiation or remote identity overhead.",
+      "prompt": "Use it only across a real service boundary. Validate agent identity, capabilities, timeouts and artifacts.",
+      "source": "https://a2a-protocol.org/latest/"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "layer": "Agent execution",
+      "category": "Model access",
+      "selection": "Alternative",
+      "fit": "Managed routing across model providers behind one gateway.",
+      "tradeoff": "Fallback can change region, data policy, model behavior and cost.",
+      "prompt": "Allowlist eligible fallback providers per data class and record the actual provider and model per call.",
+      "source": "https://vercel.com/docs/ai-gateway"
+    },
+    {
+      "name": "LiteLLM",
+      "layer": "Agent execution",
+      "category": "Model access",
+      "selection": "Alternative",
+      "fit": "Gateway/proxy with a common model interface for a team operating its own routing layer.",
+      "tradeoff": "You own the proxy's availability, upgrades, keys and policy.",
+      "prompt": "Assign virtual credentials by application and tenant. Reject unapproved fallbacks and log attributed spend.",
+      "source": "https://docs.litellm.ai/docs/"
+    },
+    {
+      "name": "Vercel Sandbox",
+      "layer": "Agent execution",
+      "category": "Execution isolation",
+      "selection": "Specialist",
+      "fit": "Isolated compute for an agent that genuinely needs to execute generated code.",
+      "tradeoff": "Bound network, lifetime, artifacts and credential exposure per execution.",
+      "prompt": "Start a short-lived sandbox with scoped inputs. Copy approved artifacts out, then expire the environment.",
+      "source": "https://vercel.com/docs/vercel-sandbox"
+    },
+    {
+      "name": "E2B",
+      "layer": "Agent execution",
+      "category": "Execution isolation",
+      "selection": "Alternative",
+      "fit": "Independent sandbox service for model-generated code or data analysis.",
+      "tradeoff": "Evaluate image lineage, region, egress controls and session cleanup.",
+      "prompt": "Use a prepared image, minimal file mounts, bounded time and an audited artifact-export path.",
+      "source": "https://e2b.dev/docs"
+    },
+    {
+      "name": "Temporal",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Default",
+      "fit": "Durable business workflows spanning outages, external systems and long human waits.",
+      "tradeoff": "Deterministic workflow code, activity idempotency and worker versioning are operational commitments.",
+      "prompt": "Make Temporal the workflow owner. Put all network and model calls into bounded activities.",
+      "source": "https://docs.temporal.io/"
+    },
+    {
+      "name": "Inngest",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "Event-triggered durable steps and background work for application teams.",
+      "tradeoff": "Choose a single retry owner per side effect. Test event re-delivery and concurrency limits.",
+      "prompt": "Give each step a stable name and each logical effect a deduplication key. Exercise a duplicate trigger.",
+      "source": "https://www.inngest.com/docs"
+    },
+    {
+      "name": "Workflow SDK",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "Durable TypeScript functions and steps, including the execution substrate used by eve.",
+      "tradeoff": "Check upgrade, retention and deployment adapter behavior for the chosen host.",
+      "prompt": "Persist run references and use durable waits for review. If using eve, keep approvals in its owning workflow.",
+      "source": "https://workflow-sdk.dev/"
+    },
+    {
+      "name": "FastAPI",
+      "layer": "System design",
+      "category": "APIs & modeling",
+      "selection": "Default",
+      "fit": "Typed HTTP boundary for a Python agent or retrieval service.",
+      "tradeoff": "Long work in a request handler consumes capacity and is vulnerable to disconnects.",
+      "prompt": "Return 202 with a run ID, validate scope, enqueue durably, and expose a cursor-based event endpoint.",
+      "source": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "name": "NestJS",
+      "layer": "System design",
+      "category": "APIs & modeling",
+      "selection": "Alternative",
+      "fit": "Structured Node API with modules and dependency injection for larger backend teams.",
+      "tradeoff": "A separate API service adds deployment and tracing overhead.",
+      "prompt": "Organize by case, approval and execution modules and validate inputs at each external boundary.",
+      "source": "https://docs.nestjs.com/"
+    },
+    {
+      "name": "OpenAPI",
+      "layer": "System design",
+      "category": "APIs & modeling",
+      "selection": "Default",
+      "fit": "Describe HTTP endpoints and generate consistent clients for UI and integrations.",
+      "tradeoff": "Breaking response changes need compatibility and contract tests.",
+      "prompt": "Specify Run, Evidence, Approval and Problem responses. Include 403, 409 and idempotent retry examples.",
+      "source": "https://www.openapis.org/what-is-openapi"
+    },
+    {
+      "name": "AsyncAPI",
+      "layer": "System design",
+      "category": "APIs & modeling",
+      "selection": "Specialist",
+      "fit": "Document event channels, payloads and producer/consumer contracts across teams.",
+      "tradeoff": "A specification cannot enforce delivery order or deduplication.",
+      "prompt": "Publish event versions, delivery guarantees and per-run ordering. Reject unknown breaking versions.",
+      "source": "https://www.asyncapi.com/docs/concepts/asyncapi-document"
+    },
+    {
+      "name": "C4 model",
+      "layer": "System design",
+      "category": "APIs & modeling",
+      "selection": "Default",
+      "fit": "Architecture notation for context, containers and component ownership.",
+      "tradeoff": "Dense component diagrams obscure operational boundaries.",
+      "prompt": "Draw browser, BFF, worker, database, IdP and model boundary. Label the owner and protocol of each crossing.",
+      "source": "https://c4model.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Default",
+      "fit": "System of record for tenants, runs, approvals, events and effect receipts with row-level policies.",
+      "tradeoff": "Table owners and BYPASSRLS roles can bypass policies. Model worker privileges explicitly.",
+      "prompt": "Enable tenant policies and use scoped roles. Test cross-tenant access on the API, event stream and evidence.",
+      "source": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html"
+    },
+    {
+      "name": "Drizzle ORM",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Alternative",
+      "fit": "Typed SQL access and migrations for a TypeScript/Postgres application.",
+      "tradeoff": "Migration lock time and RLS behavior still need database-level testing.",
+      "prompt": "Use reviewed migrations and verify a least-privilege application role on a restored production-sized database.",
+      "source": "https://orm.drizzle.team/docs/overview"
+    },
+    {
+      "name": "pgvector",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Specialist",
+      "fit": "Vector retrieval beside relational metadata when Postgres already stores your knowledge base.",
+      "tradeoff": "Approximate retrieval under restrictive filters can hurt recall. Evaluate tenant-specific queries.",
+      "prompt": "Apply document ACLs and tenant filters, measure recall at k and cite stable chunk IDs.",
+      "source": "https://github.com/pgvector/pgvector"
+    },
+    {
+      "name": "NATS JetStream",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Specialist",
+      "fit": "Persistent streams when several workers or independent consumers must replay domain events.",
+      "tradeoff": "At-least-once scenarios require consumer deduplication and capacity planning.",
+      "prompt": "Set explicit retention, ack policy and consumer lag alarms. Keep the authoritative run sequence in the store.",
+      "source": "https://docs.nats.io/nats-concepts/jetstream"
+    },
+    {
+      "name": "Amazon S3",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Alternative",
+      "fit": "Object storage for large evidence files and exported artifacts.",
+      "tradeoff": "Signed URLs are bearer access. Decide expiry, retention, region and versioning.",
+      "prompt": "Store opaque object references in events and mint short-lived downloads after authorization.",
+      "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    },
+    {
+      "name": "Transactional outbox",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Default",
+      "fit": "Commit a domain change and its pending message in the same database transaction.",
+      "tradeoff": "Dispatch can deliver duplicates. Consumers must tolerate retries.",
+      "prompt": "Insert the run and outbox record atomically, publish after commit, and reconcile unacknowledged messages.",
+      "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html"
+    },
+    {
+      "name": "Server-sent events",
+      "layer": "System design",
+      "category": "Data & messaging",
+      "selection": "Default",
+      "fit": "One-way browser delivery of ordered run updates alongside ordinary HTTP commands.",
+      "tradeoff": "Connection limits, proxy buffering and cursor gaps vary by host.",
+      "prompt": "Send event IDs, heartbeat, resume cursor and snapshot fallback. Recheck authorization on reconnect.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events"
+    },
+    {
+      "name": "OpenTofu",
+      "layer": "System design",
+      "category": "Delivery",
+      "selection": "Alternative",
+      "fit": "Versioned infrastructure for repeatable private-network or enterprise deployments.",
+      "tradeoff": "Remote state is sensitive and needs restricted access and locking.",
+      "prompt": "Provision separate stage and production with encrypted state and reviewed plans.",
+      "source": "https://opentofu.org/docs/intro/"
+    },
+    {
+      "name": "GitHub Actions OIDC",
+      "layer": "System design",
+      "category": "Delivery",
+      "selection": "Default",
+      "fit": "Short-lived cloud credentials for build and deployment jobs.",
+      "tradeoff": "Overbroad trust conditions can grant credentials to unintended jobs.",
+      "prompt": "Restrict trust to the correct repository, workflow/environment and audience. Pin third-party actions.",
+      "source": "https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect"
+    },
+    {
+      "name": "OpenFeature",
+      "layer": "System design",
+      "category": "Delivery",
+      "selection": "Alternative",
+      "fit": "Vendor-neutral flag evaluation for progressive rollout and a circuit-breaking product switch.",
+      "tradeoff": "Flag evaluation must have a safe default when the provider fails.",
+      "prompt": "Gate the new harness version by tenant cohort, record the variant on every run, and support rollback.",
+      "source": "https://openfeature.dev/docs/reference/intro/"
+    },
+    {
+      "name": "Storybook",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Default",
+      "fit": "Isolated component states, interaction stories and design review.",
+      "tradeoff": "A story can hide backend and reconnect failures. Pair it with a browser integration test.",
+      "prompt": "Create an approval story for pending, expired, rejected and already handled states.",
+      "source": "https://storybook.js.org/docs"
+    },
+    {
+      "name": "Playwright",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Default",
+      "fit": "Browser verification across run creation, review and reconnection.",
+      "tradeoff": "Time-based sleeps make event-driven tests brittle.",
+      "prompt": "Wait for event-derived UI states and assert the same run after reload. Capture traces on failure.",
+      "source": "https://playwright.dev/docs/intro"
+    },
+    {
+      "name": "axe-core for Playwright",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Default",
+      "fit": "Automated accessibility checks within exercised screens.",
+      "tradeoff": "Manual keyboard, screen reader, zoom and RTL testing remain necessary.",
+      "prompt": "Check the dialog open state and completed trace, then manually verify focus return and a nonvisual handoff.",
+      "source": "https://playwright.dev/docs/accessibility-testing"
+    },
+    {
+      "name": "Grafana k6",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Alternative",
+      "fit": "Load testing APIs, streams and queues against explicit workload assumptions.",
+      "tradeoff": "Synthetic throughput without a representative tenant mix is misleading.",
+      "prompt": "Test bursts from one tenant while measuring another tenant's admission latency and run completion.",
+      "source": "https://grafana.com/docs/k6/latest/"
+    },
+    {
+      "name": "OpenTelemetry",
+      "layer": "Quality & operations",
+      "category": "Observability & evals",
+      "selection": "Default",
+      "fit": "Correlated traces, metrics and logs across BFF, workflow and model gateway.",
+      "tradeoff": "Avoid tenant IDs in unbounded metric labels and scrub sensitive span attributes.",
+      "prompt": "Propagate trace context across queues. Record wait, tool time and model time as separate spans.",
+      "source": "https://opentelemetry.io/docs/concepts/signals/"
+    },
+    {
+      "name": "Langfuse",
+      "layer": "Quality & operations",
+      "category": "Observability & evals",
+      "selection": "Alternative",
+      "fit": "Agent traces, prompt versions, datasets and evaluation results.",
+      "tradeoff": "Model inputs, outputs and traces can be sensitive. Configure sampling, redaction and retention.",
+      "prompt": "Tag each result with workflow, prompt, model and dataset version. Compare cost per successful case.",
+      "source": "https://langfuse.com/docs"
+    },
+    {
+      "name": "Promptfoo",
+      "layer": "Quality & operations",
+      "category": "Observability & evals",
+      "selection": "Default",
+      "fit": "Repeatable evaluation suites comparing prompts, providers and application outcomes.",
+      "tradeoff": "Model-judged scores need human calibration. Keep deterministic controls separate.",
+      "prompt": "Evaluate route, tool allowlist and evidence correctness against labeled cases and output a CI report.",
+      "source": "https://www.promptfoo.dev/docs/intro/"
+    },
+    {
+      "name": "OpenID Connect",
+      "layer": "Security",
+      "category": "Identity & access",
+      "selection": "Default",
+      "fit": "Federated identity for enterprise login through the organization's identity provider.",
+      "tradeoff": "Identity alone does not authorize access to a tenant's records.",
+      "prompt": "Validate issuer and audience, map tenant membership server-side, and renew the session on sensitive decisions.",
+      "source": "https://openid.net/developers/how-connect-works/"
+    },
+    {
+      "name": "Keycloak",
+      "layer": "Security",
+      "category": "Identity & access",
+      "selection": "Alternative",
+      "fit": "Self-managed identity and federation for teams with the operational capacity.",
+      "tradeoff": "Owning the IdP adds patching, availability and recovery obligations.",
+      "prompt": "Integrate a separate test realm and exercise role withdrawal, session expiry and logout propagation.",
+      "source": "https://www.keycloak.org/"
+    },
+    {
+      "name": "OpenFGA",
+      "layer": "Security",
+      "category": "Identity & access",
+      "selection": "Alternative",
+      "fit": "Relationship-based checks for shared cases, delegated reviewers and hierarchical access.",
+      "tradeoff": "Relationship writes and caching introduce consistency questions at revocation.",
+      "prompt": "Represent reviewer and viewer relationships on cases. Recheck write permission immediately before execution.",
+      "source": "https://openfga.dev/docs/concepts"
+    },
+    {
+      "name": "Open Policy Agent",
+      "layer": "Security",
+      "category": "Identity & access",
+      "selection": "Alternative",
+      "fit": "Contextual policy decisions outside model prompts and application conditionals.",
+      "tradeoff": "Policy distribution, decision logging and fail-closed behavior need owners.",
+      "prompt": "Gate tool invocation using subject, tenant, action, resource and approval state. Persist the policy version.",
+      "source": "https://www.openpolicyagent.org/docs"
+    },
+    {
+      "name": "Vault",
+      "layer": "Security",
+      "category": "Identity & access",
+      "selection": "Alternative",
+      "fit": "Central secrets management where teams need scoped credentials and rotation.",
+      "tradeoff": "Plan how workloads authenticate, renew leases and behave during an outage.",
+      "prompt": "Use workload identity to retrieve scoped secrets. Never pass raw secrets through prompts or user traces.",
+      "source": "https://www.hashicorp.com/en/products/vault"
+    },
+    {
+      "name": "OWASP ASVS",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Default",
+      "fit": "Verification requirements for prioritizing application security controls and tests.",
+      "tradeoff": "A checklist needs traceable evidence, applicability and ownership.",
+      "prompt": "Map applicable requirements to tests, evidence links and accountable owners for this app.",
+      "source": "https://owasp.org/www-project-application-security-verification-standard/"
+    },
+    {
+      "name": "OWASP agentic and GenAI guidance",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Default",
+      "fit": "Threat categories for agent tools, autonomy, identities and delegated work.",
+      "tradeoff": "Pair threat descriptions with preventive controls and release evidence.",
+      "prompt": "Threat-model untrusted retrieved content, excessive agency and over-scoped access. Test the intended denial paths.",
+      "source": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "name": "Semgrep",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Alternative",
+      "fit": "Static analysis for unsafe patterns in generated and handwritten source.",
+      "tradeoff": "Rules need tuning and owners to prevent high-noise gates.",
+      "prompt": "Review new high-confidence findings on changed code and record time-limited, owned exceptions.",
+      "source": "https://semgrep.dev/docs/"
+    },
+    {
+      "name": "Trivy",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Alternative",
+      "fit": "Scan built artifacts and infrastructure configuration for known issues.",
+      "tradeoff": "Scan results depend on advisory freshness, artifact scope and configuration.",
+      "prompt": "Scan the release image digest and IaC, record the scanner database time and triage actionable findings.",
+      "source": "https://github.com/aquasecurity/trivy"
+    },
+    {
+      "name": "CycloneDX",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Alternative",
+      "fit": "Standard bill-of-materials format for dependencies and shipped artifacts.",
+      "tradeoff": "Generating an SBOM does not prove the release came from the trusted build.",
+      "prompt": "Attach an SBOM to the release digest and verify it identifies the dependencies actually shipped.",
+      "source": "https://cyclonedx.org/"
+    },
+    {
+      "name": "Sigstore Cosign",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Alternative",
+      "fit": "Sign and verify artifact identity and attestations in the release pipeline.",
+      "tradeoff": "A valid signature still needs a trusted issuer and expected signing identity.",
+      "prompt": "At deployment verify the artifact digest, expected workflow identity and issuer before promotion.",
+      "source": "https://docs.sigstore.dev/cosign/verifying/verify/"
+    },
+    {
+      "name": "SLSA",
+      "layer": "Security",
+      "category": "Verification & supply chain",
+      "selection": "Alternative",
+      "fit": "Supply-chain framework for evaluating build provenance and integrity.",
+      "tradeoff": "Choose a target level and verify its actual requirements before making assurance claims.",
+      "prompt": "Record source revision, builder identity and provenance verification alongside each release.",
+      "source": "https://slsa.dev/spec/"
+    },
+    {
+      "name": "Anime.js",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Alternative",
+      "fit": "SVG path drawing, morphing and object-on-path motion for custom diagrams.",
+      "tradeoff": "Choose it for a bespoke diagram with a defined DOM owner. Avoid two animation engines writing the same property.",
+      "prompt": "Animate a single envelope along the committed edge and clear it on completion or seek.",
+      "source": "https://animejs.com/documentation/svg/"
+    },
+    {
+      "name": "Web Animations API",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Alternative",
+      "fit": "Native browser animation control for simple transitions and playback using a small dependency budget.",
+      "tradeoff": "A path layout, timeline model and React lifecycle cleanup are your responsibility.",
+      "prompt": "Animate the committed handoff in the browser and cancel the animation when the view unmounts or the cursor jumps.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+    },
+    {
+      "name": "D3 transitions",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Data joins and interpolated transitions for custom span waterfalls, distribution views and changing metrics.",
+      "tradeoff": "Give D3 ownership of a bounded rendering subtree and stable span keys.",
+      "prompt": "Build a duration waterfall keyed by span ID, preserve row order and update only the bars whose timestamps changed.",
+      "source": "https://d3js.org/d3-transition"
+    },
+    {
+      "name": "PixiJS",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "A GPU-backed overlay for many simultaneous packet sprites or dense telemetry visuals.",
+      "tradeoff": "Profile first. Use an accessible DOM inspector and keep GPU coordinates in sync with pan and zoom.",
+      "prompt": "Render only visible, sampled transfer sprites; pause the ticker in background tabs and retain exact counts in the event list.",
+      "source": "https://pixijs.com/8.x/guides/components/scene-objects/particle-container"
+    },
+    {
+      "name": "Sigma.js",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "WebGL network exploration when the problem is a large network of relationships.",
+      "tradeoff": "Rich editable HTML nodes and form-heavy operator workflows favor a different renderer.",
+      "prompt": "Map the service dependency network at overview zoom and drill into one run for its exact sequence and decisions.",
+      "source": "https://www.sigmajs.org/"
+    },
+    {
+      "name": "dotLottie-web",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Specialist",
+      "fit": "Playback of authored vector motion assets for reusable illustrations and state cues.",
+      "tradeoff": "An asset alone cannot encode changing topology, payloads or audit semantics.",
+      "prompt": "Bind a short completion or fault asset to a committed state. Preserve visible status text and offer a still frame.",
+      "source": "https://developers.lottiefiles.com/docs/dotlottie-player/dotlottie-web/"
+    },
+    {
+      "name": "SvelteKit",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "Server-rendered Svelte workspaces with forms and per-route loading.",
+      "tradeoff": "Choose the deployment adapter early; streaming and server capabilities depend on the host.",
+      "prompt": "Enhance a case form progressively, then test it with JavaScript disabled and with a validation error.",
+      "source": "https://svelte.dev/docs/kit/introduction"
+    },
+    {
+      "name": "Astro",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "A content-heavy documentation estate with occasional interactive components.",
+      "tradeoff": "Hydrating every island gives away the lightweight delivery advantage.",
+      "prompt": "Render reference pages as static HTML and hydrate only the diagram inspector.",
+      "source": "https://docs.astro.build/en/concepts/islands/"
+    },
+    {
+      "name": "TanStack Router",
+      "layer": "Frontend",
+      "category": "App foundations",
+      "selection": "Alternative",
+      "fit": "Type-safe routing and shareable filter state in a React SPA.",
+      "tradeoff": "The team owns the API and server-rendering integration it selects.",
+      "prompt": "Represent queue filters and selected case as validated search parameters. Test a copied deep link.",
+      "source": "https://tanstack.com/router/latest"
+    },
+    {
+      "name": "Ant Design",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Dense business forms and administration workflows for a React team.",
+      "tradeoff": "Translating a bespoke brand into the component system takes design ownership.",
+      "prompt": "Specify table density, field validation, empty states and locale formatting in one theme.",
+      "source": "https://ant.design/components/overview/"
+    },
+    {
+      "name": "Fluent UI",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "An application that needs to feel familiar in the Microsoft ecosystem.",
+      "tradeoff": "Check component coverage separately across React and web-component implementations.",
+      "prompt": "Use the native Fluent patterns for task navigation, commands and contextual detail.",
+      "source": "https://fluent2.microsoft.design/"
+    },
+    {
+      "name": "Spectrum",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "An established design language with detailed interaction and accessibility guidance.",
+      "tradeoff": "Design guidance and the chosen React implementation can differ in coverage.",
+      "prompt": "Map date, selection and error semantics to the matching implementation before committing the design.",
+      "source": "https://spectrum.adobe.com/"
+    },
+    {
+      "name": "PatternFly",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Platform administration, cluster operations and dense resource inventory.",
+      "tradeoff": "A mature admin vocabulary can still need domain-specific content and navigation.",
+      "prompt": "Give resource status, namespace and last observed time separate fields in the inventory.",
+      "source": "https://www.patternfly.org/"
+    },
+    {
+      "name": "USWDS",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Public-service experiences needing clear forms and accessible layout guidance.",
+      "tradeoff": "Check the service's own accessibility, language and brand obligations.",
+      "prompt": "Use one question per decision and show corrective text that identifies the field and recovery action.",
+      "source": "https://designsystem.digital.gov/"
+    },
+    {
+      "name": "GOV.UK Design System",
+      "layer": "Frontend",
+      "category": "Design systems",
+      "selection": "Alternative",
+      "fit": "Transactional services involving eligibility, application, review and confirmation.",
+      "tradeoff": "Adapt local policy and language and retain the user's own visual identity.",
+      "prompt": "Use a check-answers pattern before submission and a confirmation reference afterwards.",
+      "source": "https://design-system.service.gov.uk/"
+    },
+    {
+      "name": "Floating UI",
+      "layer": "Frontend",
+      "category": "Interaction primitives",
+      "selection": "Alternative",
+      "fit": "Positioning an anchored inspector, tooltip or contextual menu in complex layouts.",
+      "tradeoff": "Positioning alone does not supply dialog semantics or a focus policy.",
+      "prompt": "Keep the inspector visible near the selected item on scroll and test Escape and focus return.",
+      "source": "https://floating-ui.com/docs/getting-started"
+    },
+    {
+      "name": "Ariakit",
+      "layer": "Frontend",
+      "category": "Interaction primitives",
+      "selection": "Alternative",
+      "fit": "A custom React design system with accessible menu, combobox and dialog behavior.",
+      "tradeoff": "Visual treatment, integration testing and component composition are team responsibilities.",
+      "prompt": "Test a long combobox with a keyboard, a screen reader and an input-method editor.",
+      "source": "https://ariakit.org/"
+    },
+    {
+      "name": "Headless UI",
+      "layer": "Frontend",
+      "category": "Interaction primitives",
+      "selection": "Alternative",
+      "fit": "Unstyled accessible components for an existing Tailwind-based interface.",
+      "tradeoff": "Avoid mixing separate overlay stacks across teams without a shared focus contract.",
+      "prompt": "Use the dialog primitive for review and restore focus to the invoking queue action.",
+      "source": "https://headlessui.com/"
+    },
+    {
+      "name": "Recharts",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Conventional React dashboards with composable Cartesian charts.",
+      "tradeoff": "High mark counts and bespoke interactions need device-level profiling.",
+      "prompt": "Plot queue age and tool latency on separate charts with labeled units and a table alternative.",
+      "source": "https://github.com/recharts/recharts"
+    },
+    {
+      "name": "Observable Plot",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Exploratory operational charts where a concise statistical grammar is valuable.",
+      "tradeoff": "Product-level interaction and persistent selection need surrounding state management.",
+      "prompt": "Facet queue delay by region and include sample size for each distribution.",
+      "source": "https://observablehq.com/plot/what-is-plot"
+    },
+    {
+      "name": "Vega-Lite",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Reusable declarative chart specs for linked operational analytics.",
+      "tradeoff": "A generated chart specification still needs schema, dataset and URL restrictions.",
+      "prompt": "Allow an approved chart schema and a bounded field catalog; fail gracefully on invalid encodings.",
+      "source": "https://vega.github.io/vega-lite/"
+    },
+    {
+      "name": "Cytoscape.js",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Network analysis and graph selection where topology matters more than form-like nodes.",
+      "tradeoff": "Interactive complexity, layout cost and accessibility need separate design.",
+      "prompt": "Filter services by neighborhood and link selected nodes to an equivalent textual dependency view.",
+      "source": "https://js.cytoscape.org/"
+    },
+    {
+      "name": "Graphviz",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Reproducible static architecture and dependency diagrams from structured topology.",
+      "tradeoff": "Large diagrams can become illegible despite automatic layout.",
+      "prompt": "Split trust boundaries and runtime flows across diagrams. Label edge direction and protocol.",
+      "source": "https://graphviz.org/"
+    },
+    {
+      "name": "Mermaid",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Maintaining architecture, state and sequence diagrams beside design decisions.",
+      "tradeoff": "Renderer capabilities differ between documentation hosts.",
+      "prompt": "Use stable names and one decision per diagram. Verify rendering on the publishing target.",
+      "source": "https://mermaid.js.org/intro/"
+    },
+    {
+      "name": "visx",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "Bespoke React visualizations requiring control over scales and marks.",
+      "tradeoff": "The team owns axes, legends, keyboard navigation and accessible explanations.",
+      "prompt": "Build a tool-span waterfall with consistent time scales and links to textual span details.",
+      "source": "https://airbnb.io/visx/"
+    },
+    {
+      "name": "Konva",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "A canvas-based floor plan, equipment editor or layered inspection surface.",
+      "tradeoff": "A canvas needs a parallel semantic interaction path and explicit hit testing.",
+      "prompt": "Synchronize canvas selection with a keyboard-accessible equipment list.",
+      "source": "https://konvajs.org/docs/"
+    },
+    {
+      "name": "Three.js",
+      "layer": "Frontend",
+      "category": "Charts & diagrams",
+      "selection": "Specialist",
+      "fit": "A 3D inspection where orientation or occlusion changes an operator's decision.",
+      "tradeoff": "Asset budget, GPU availability and camera controls affect actual usability.",
+      "prompt": "Define the inspection question, lazy-load the model and provide a labeled 2D fallback.",
+      "source": "https://threejs.org/docs/"
+    },
+    {
+      "name": "View Transition API",
+      "layer": "Frontend",
+      "category": "Motion & visualisation",
+      "selection": "Alternative",
+      "fit": "Shared visual continuity between a list item and its detail screen.",
+      "tradeoff": "Check platform support and avoid two engines animating the same element.",
+      "prompt": "Provide a plain navigation path and honor reduced motion when transitioning between case and detail.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API"
+    },
+    {
+      "name": "FormatJS",
+      "layer": "Frontend",
+      "category": "Localization",
+      "selection": "Alternative",
+      "fit": "Localized messages, plural forms and dates for internationalized web applications.",
+      "tradeoff": "Extracted keys and translations require an ownership and release workflow.",
+      "prompt": "Format numeric counts by locale and keep opaque case identifiers untranslated.",
+      "source": "https://formatjs.github.io/docs/intl/"
+    },
+    {
+      "name": "i18next",
+      "layer": "Frontend",
+      "category": "Localization",
+      "selection": "Alternative",
+      "fit": "Runtime locale selection and resource namespaces across multiple clients.",
+      "tradeoff": "Lazy-loaded namespaces can produce partial screens or fallback leaks.",
+      "prompt": "Test a missing translation and language switch in the middle of an approval journey.",
+      "source": "https://www.i18next.com/"
+    },
+    {
+      "name": "Style Dictionary",
+      "layer": "Frontend",
+      "category": "Design operations",
+      "selection": "Alternative",
+      "fit": "Distributing design tokens to several web and native clients.",
+      "tradeoff": "Build transforms can diverge by platform or silently change token meaning.",
+      "prompt": "Produce light, dark and high-contrast outputs from semantic aliases and review visual diffs.",
+      "source": "https://styledictionary.com/"
+    },
+    {
+      "name": "Design Tokens Community Group format",
+      "layer": "Frontend",
+      "category": "Design operations",
+      "selection": "Alternative",
+      "fit": "A portable token exchange format between design tools and platform builds.",
+      "tradeoff": "Validate tool support for the selected specification revision and alias behavior.",
+      "prompt": "Specify semantic color and motion tokens once and validate aliases before generating platform values.",
+      "source": "https://www.designtokens.org/tr/2025.10/format/"
+    },
+    {
+      "name": "Kafka",
+      "layer": "System design",
+      "category": "Events & integration",
+      "selection": "Alternative",
+      "fit": "A durable event backbone for independent consumers and replayable streams.",
+      "tradeoff": "Partitioning defines ordering scope; slow consumers and schema drift require operational tooling.",
+      "prompt": "Key events by aggregate ID, version payloads and expose consumer lag and replay controls.",
+      "source": "https://kafka.apache.org/intro"
+    },
+    {
+      "name": "RabbitMQ",
+      "layer": "System design",
+      "category": "Events & integration",
+      "selection": "Alternative",
+      "fit": "Work queues and routing where acknowledgment and delivery behavior are explicit.",
+      "tradeoff": "A retry can redeliver work already applied at the destination.",
+      "prompt": "Declare queue ownership, retry deadlines, dead-letter routing and an idempotent consumer.",
+      "source": "https://www.rabbitmq.com/docs"
+    },
+    {
+      "name": "Apache Flink",
+      "layer": "System design",
+      "category": "Events & integration",
+      "selection": "Specialist",
+      "fit": "Stateful stream processing for time-windowed telemetry and late events.",
+      "tradeoff": "State size, watermark strategy and checkpoint recovery need load tests.",
+      "prompt": "Define event time, allowed lateness and the correction rule for an updated metric.",
+      "source": "https://github.com/apache/flink"
+    },
+    {
+      "name": "Debezium",
+      "layer": "System design",
+      "category": "Events & integration",
+      "selection": "Alternative",
+      "fit": "Change-data capture for downstream projections and integration feeds.",
+      "tradeoff": "Schema evolution, initial snapshots and retained transaction logs require ownership.",
+      "prompt": "Specify a bootstrap snapshot, durable offsets and recovery when a consumer falls behind retention.",
+      "source": "https://debezium.io/documentation/reference/stable/architecture.html"
+    },
+    {
+      "name": "Redis",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "Low-latency cache and short-lived counters for an existing application.",
+      "tradeoff": "Eviction, failover and stale authorization can change business behavior.",
+      "prompt": "Scope cache keys to tenant and permission version. Test eviction and database fallback.",
+      "source": "https://redis.io/docs/latest/develop/"
+    },
+    {
+      "name": "Valkey",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Specialist",
+      "fit": "An open-source key-value service where a managed or self-hosted deployment is needed.",
+      "tradeoff": "Verify client, command and service compatibility with the workload.",
+      "prompt": "Set TTL and memory policy per use case and test read behavior during failover.",
+      "source": "https://valkey.io/"
+    },
+    {
+      "name": "ClickHouse",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "Analytical scans across append-heavy events, traces or telemetry.",
+      "tradeoff": "Table order and ingestion shape drive query cost and correction behavior.",
+      "prompt": "Model the primary time and tenant filters and benchmark the p95 dashboard query on production-shaped data.",
+      "source": "https://clickhouse.com/docs/intro"
+    },
+    {
+      "name": "DuckDB",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "Embedded analytics over columnar files for reproducible investigations.",
+      "tradeoff": "Concurrency and memory budgets differ from a shared analytical service.",
+      "prompt": "Analyze a versioned Parquet snapshot and report sampling, filters and query time.",
+      "source": "https://duckdb.org/docs/stable/"
+    },
+    {
+      "name": "OpenSearch",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "Search across indexed enterprise documents with filters and aggregations.",
+      "tradeoff": "Index freshness and authorization propagation need explicit service objectives.",
+      "prompt": "Apply tenant and document grants, record source revisions and test revoked-document search.",
+      "source": "https://docs.opensearch.org/latest/"
+    },
+    {
+      "name": "Qdrant",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "A dedicated vector retrieval service for filtered semantic search.",
+      "tradeoff": "Choosing an index, embedding revision and filter strategy requires a labeled retrieval set.",
+      "prompt": "Benchmark recall and latency with restrictive tenant filters and realistic deletion frequency.",
+      "source": "https://qdrant.tech/documentation/"
+    },
+    {
+      "name": "Apache Iceberg",
+      "layer": "System design",
+      "category": "Storage & retrieval",
+      "selection": "Alternative",
+      "fit": "Large analytical tables that need snapshot history and schema evolution.",
+      "tradeoff": "Catalog maintenance, compaction and expired snapshot cleanup have a cost.",
+      "prompt": "Version the event schema and define the retention and compaction policy for archived runs.",
+      "source": "https://iceberg.apache.org/docs/latest/"
+    },
+    {
+      "name": "gRPC",
+      "layer": "System design",
+      "category": "Contracts & APIs",
+      "selection": "Alternative",
+      "fit": "Typed internal service calls and streaming across service boundaries.",
+      "tradeoff": "Browser and proxy compatibility need a deliberate gateway or transport choice.",
+      "prompt": "Set deadlines and cancellation, version protobuf fields compatibly and test service degradation.",
+      "source": "https://grpc.io/docs/what-is-grpc/introduction/"
+    },
+    {
+      "name": "GraphQL",
+      "layer": "System design",
+      "category": "Contracts & APIs",
+      "selection": "Alternative",
+      "fit": "Multiple clients need different shapes of a shared domain graph.",
+      "tradeoff": "Resolver authorization, query cost and per-field fan-out need controls.",
+      "prompt": "Cap complexity and verify field-level authorization on sensitive case relationships.",
+      "source": "https://graphql.org/learn/"
+    },
+    {
+      "name": "CloudEvents",
+      "layer": "System design",
+      "category": "Contracts & APIs",
+      "selection": "Alternative",
+      "fit": "A common envelope across event producers and transport adapters.",
+      "tradeoff": "Domain schemas, delivery guarantees and tenant permissions remain application decisions.",
+      "prompt": "Keep source, type, ID and payload schema stable across broker and HTTP transports.",
+      "source": "https://cloudevents.io/"
+    },
+    {
+      "name": "JSON Schema",
+      "layer": "System design",
+      "category": "Contracts & APIs",
+      "selection": "Default",
+      "fit": "Validating data at HTTP, workflow, tool and event boundaries.",
+      "tradeoff": "Draft support and allowed keywords vary across validators and model providers.",
+      "prompt": "Pin the dialect and reject unknown action types before a tool receives arguments.",
+      "source": "https://json-schema.org/overview/what-is-jsonschema"
+    },
+    {
+      "name": "Kubernetes",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "A platform team needs scheduling, rollout and isolation controls for many services.",
+      "tradeoff": "Operational overhead is substantial for a small service or simple website.",
+      "prompt": "Specify resource requests, disruption budgets and worker drain behavior before choosing the cluster shape.",
+      "source": "https://kubernetes.io/docs/concepts/overview/"
+    },
+    {
+      "name": "Argo CD",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "Declarative application delivery from Git for Kubernetes environments.",
+      "tradeoff": "Separately authorize repository writes, deployment promotion and secret access.",
+      "prompt": "Show drift, require production promotion review and rehearse rollback of a worker revision.",
+      "source": "https://argo-cd.readthedocs.io/en/stable/"
+    },
+    {
+      "name": "Helm",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "Packaging and configuring versioned Kubernetes applications.",
+      "tradeoff": "Template complexity can hide environment-specific mistakes.",
+      "prompt": "Render and check the production values in CI and document data migration dependencies.",
+      "source": "https://helm.sh/docs/"
+    },
+    {
+      "name": "Envoy",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "Consistent edge or service-proxy behavior across a polyglot estate.",
+      "tradeoff": "Timeout and retry policies can amplify work when also configured upstream.",
+      "prompt": "Assign retry ownership and measure the effective end-to-end request deadline.",
+      "source": "https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy"
+    },
+    {
+      "name": "Dapr",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "Common building blocks for services across different language runtimes.",
+      "tradeoff": "Sidecar dependencies introduce another version, latency and recovery boundary.",
+      "prompt": "Specify which pub/sub or state component is used and test its actual delivery semantics.",
+      "source": "https://docs.dapr.io/"
+    },
+    {
+      "name": "Backstage",
+      "layer": "System design",
+      "category": "Infrastructure & delivery",
+      "selection": "Alternative",
+      "fit": "A developer portal for service ownership, documentation and templates.",
+      "tradeoff": "Catalog accuracy needs integration with engineering ownership practices.",
+      "prompt": "Expose the team's runbook, service owner, SLO and escalation path on one catalog record.",
+      "source": "https://backstage.io/docs/overview/what-is-backstage/"
+    },
+    {
+      "name": "OpenAPI Generator",
+      "layer": "System design",
+      "category": "Contracts & APIs",
+      "selection": "Alternative",
+      "fit": "Repeatable client generation for multiple API consumers.",
+      "tradeoff": "Generator changes and hand edits create drift.",
+      "prompt": "Pin the generator and schema revision and verify an older client against the new server.",
+      "source": "https://openapi-generator.tech/docs/usage/"
+    },
+    {
+      "name": "LlamaIndex",
+      "layer": "Agent execution",
+      "category": "Retrieval & knowledge",
+      "selection": "Alternative",
+      "fit": "Ingestion and retrieval components for evidence-backed domain assistants.",
+      "tradeoff": "A retrieval pipeline needs independent ACL enforcement and citation evaluation.",
+      "prompt": "Link every returned chunk to its authorized source revision and measure recall.",
+      "source": "https://developers.llamaindex.ai/python/framework/"
+    },
+    {
+      "name": "Haystack",
+      "layer": "Agent execution",
+      "category": "Retrieval & knowledge",
+      "selection": "Alternative",
+      "fit": "Explicit search and generation pipelines with swappable components.",
+      "tradeoff": "Pipeline flexibility can complicate component-level performance attribution.",
+      "prompt": "Benchmark retrieval, reranking and generation independently against a fixed query set.",
+      "source": "https://docs.haystack.deepset.ai/docs/intro"
+    },
+    {
+      "name": "DSPy",
+      "layer": "Agent execution",
+      "category": "Optimization & evaluation",
+      "selection": "Specialist",
+      "fit": "Optimizing typed language-model programs against a defined metric and examples.",
+      "tradeoff": "An optimizer can improve a proxy metric while worsening a business outcome.",
+      "prompt": "Use separate training and held-out sets and inspect failure slices before promoting the candidate.",
+      "source": "https://dspy.ai/"
+    },
+    {
+      "name": "CrewAI",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Role-based multi-agent coordination with explicit tasks and process choices.",
+      "tradeoff": "More roles can add repeated work and compound cost.",
+      "prompt": "Compare two specialists against a single-agent baseline and cap delegation depth.",
+      "source": "https://docs.crewai.com/"
+    },
+    {
+      "name": "Strands Agents",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Alternative",
+      "fit": "Model-driven agents with composable tools for teams working in the AWS ecosystem.",
+      "tradeoff": "Model-directed tools still need scoped credentials and explicit stop conditions.",
+      "prompt": "Document the agent loop, model boundary, permitted tools and receipt requirements.",
+      "source": "https://strandsagents.com/latest/documentation/docs/"
+    },
+    {
+      "name": "Semantic Kernel",
+      "layer": "Agent execution",
+      "category": "Harnesses",
+      "selection": "Specialist",
+      "fit": "An installed Microsoft agent or plugin estate requiring maintenance or migration analysis.",
+      "tradeoff": "Review the Microsoft Agent Framework migration path for new investment.",
+      "prompt": "Inventory existing plugins, memory and workflows and test the target equivalent on representative cases.",
+      "source": "https://learn.microsoft.com/en-us/semantic-kernel/overview/"
+    },
+    {
+      "name": "Model Context Protocol Apps",
+      "layer": "Agent execution",
+      "category": "Agent interfaces",
+      "selection": "Specialist",
+      "fit": "Interactive resources served from a tool experience to a compatible host.",
+      "tradeoff": "Host support, isolation, authentication and renderer behavior need verification.",
+      "prompt": "Define allowed UI actions and a text-only fallback for clients without the extension.",
+      "source": "https://modelcontextprotocol.io/extensions/apps/overview"
+    },
+    {
+      "name": "OpenAI Responses API",
+      "layer": "Agent execution",
+      "category": "Model access",
+      "selection": "Alternative",
+      "fit": "Applications using OpenAI tools, structured responses and multi-step interactions.",
+      "tradeoff": "Available tools and retention controls depend on model, account and configuration.",
+      "prompt": "Map tool call and result identifiers to the business run without exposing provider secrets.",
+      "source": "https://developers.openai.com/api/docs/guides/migrate-to-responses"
+    },
+    {
+      "name": "Claude Messages API",
+      "layer": "Agent execution",
+      "category": "Model access",
+      "selection": "Alternative",
+      "fit": "Applications invoking Claude with typed content blocks and tools.",
+      "tradeoff": "The client has to handle tool responses, continuation, failures and output validation.",
+      "prompt": "Record the stop reason, validate each tool request and return a scoped tool result.",
+      "source": "https://platform.claude.com/docs/en/api/messages/create"
+    },
+    {
+      "name": "Cloudflare Workflows",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "Durable execution aligned with a Workers deployment.",
+      "tradeoff": "Review current step limits, retention and supported runtimes.",
+      "prompt": "Suspend the workflow at a human wait and prove a worker redeploy preserves the pending decision.",
+      "source": "https://developers.cloudflare.com/workflows/"
+    },
+    {
+      "name": "AWS Step Functions",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "AWS-native state machines coordinating managed services and business activities.",
+      "tradeoff": "Choose workflow type and cost model for the actual duration and volume.",
+      "prompt": "Model retries, timeouts, explicit compensation and correlation to the business case.",
+      "source": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+    },
+    {
+      "name": "Azure Durable Functions",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "Durable orchestration and external events in an Azure Functions estate.",
+      "tradeoff": "Orchestrator replay constrains code and requires careful versioning.",
+      "prompt": "Put non-deterministic I/O in activities and test an old approval after a new deployment.",
+      "source": "https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview"
+    },
+    {
+      "name": "Restate",
+      "layer": "Agent execution",
+      "category": "Durability",
+      "selection": "Alternative",
+      "fit": "Durable service invocation and stateful workflows with explicit service boundaries.",
+      "tradeoff": "Service-side durability does not make a non-idempotent external action safe.",
+      "prompt": "Use a stable logical effect ID and reconcile destination receipts across retries.",
+      "source": "https://docs.restate.dev/"
+    },
+    {
+      "name": "Vitest",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Alternative",
+      "fit": "Fast unit and component-level checks for Vite-oriented applications.",
+      "tradeoff": "Mocked tests alone cannot verify browser semantics or actual deployments.",
+      "prompt": "Test the event reducer against duplicates, gaps, terminal transitions and cursor rewind.",
+      "source": "https://vitest.dev/guide/"
+    },
+    {
+      "name": "Testing Library",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Alternative",
+      "fit": "User-oriented component tests written against accessible roles and names.",
+      "tradeoff": "An accessible query passing still leaves full keyboard and screen-reader journeys to verify.",
+      "prompt": "Select by role, submit an invalid field and verify the visible recovery message.",
+      "source": "https://testing-library.com/docs/"
+    },
+    {
+      "name": "Mock Service Worker",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Alternative",
+      "fit": "Reproducible request-level behavior for integration tests and component stories.",
+      "tradeoff": "Keep mocks synchronized with the real API contract.",
+      "prompt": "Model delayed responses, a denied decision and a stale version using the published schema.",
+      "source": "https://mswjs.io/docs/"
+    },
+    {
+      "name": "Pact",
+      "layer": "Quality & operations",
+      "category": "Testing",
+      "selection": "Alternative",
+      "fit": "Consumer-driven integration contracts between independently released services.",
+      "tradeoff": "A contract test covers interactions represented by the consumer and provider suites.",
+      "prompt": "Verify both last production consumer and next consumer contracts before promoting the provider.",
+      "source": "https://docs.pact.io/"
+    },
+    {
+      "name": "Lighthouse",
+      "layer": "Quality & operations",
+      "category": "Performance & accessibility",
+      "selection": "Alternative",
+      "fit": "Repeatable lab audits of representative pages and constrained device profiles.",
+      "tradeoff": "A one-off lab score cannot stand in for field measurements or manual accessibility review.",
+      "prompt": "Run the same authenticated task on every candidate and investigate the largest regression.",
+      "source": "https://developer.chrome.com/docs/lighthouse/overview/"
+    },
+    {
+      "name": "web-vitals",
+      "layer": "Quality & operations",
+      "category": "Performance & accessibility",
+      "selection": "Alternative",
+      "fit": "Measuring user-centric performance in real browser sessions.",
+      "tradeoff": "Sampling and device mix can hide regressions for an important cohort.",
+      "prompt": "Compare p75 responsiveness by route, device class and release cohort with privacy-safe labels.",
+      "source": "https://github.com/GoogleChrome/web-vitals"
+    },
+    {
+      "name": "Jaeger",
+      "layer": "Quality & operations",
+      "category": "Observability",
+      "selection": "Alternative",
+      "fit": "Distributed trace exploration for causality, overlapping spans and service latency.",
+      "tradeoff": "Sampled traces leave gaps in authoritative business history.",
+      "prompt": "Link a run to its trace and distinguish active tool time, queue delay and human wait.",
+      "source": "https://www.jaegertracing.io/docs/latest/"
+    },
+    {
+      "name": "Prometheus",
+      "layer": "Quality & operations",
+      "category": "Observability",
+      "selection": "Alternative",
+      "fit": "Time-series monitoring and alerts for capacity, rates and saturation.",
+      "tradeoff": "High-cardinality identifiers multiply storage and query cost.",
+      "prompt": "Track bounded dimensions on admission, queue age and outcomes. Keep per-case IDs in traces.",
+      "source": "https://prometheus.io/docs/introduction/overview/"
+    },
+    {
+      "name": "Grafana Tempo",
+      "layer": "Quality & operations",
+      "category": "Observability",
+      "selection": "Alternative",
+      "fit": "A trace backend integrated with dashboards and telemetry pipelines.",
+      "tradeoff": "Storage, sampling and sensitive attributes require deliberate governance.",
+      "prompt": "Find a slow run from a metric exemplar and inspect linked tool and worker spans.",
+      "source": "https://grafana.com/docs/tempo/latest/"
+    },
+    {
+      "name": "Sentry",
+      "layer": "Quality & operations",
+      "category": "Observability",
+      "selection": "Alternative",
+      "fit": "Application errors, release regressions and related performance symptoms.",
+      "tradeoff": "Configure scrubbing and consent before collecting sensitive context or replay.",
+      "prompt": "Attach a safe release tag and route name to an error, then verify source maps and redaction.",
+      "source": "https://docs.sentry.io/"
+    },
+    {
+      "name": "Arize Phoenix",
+      "layer": "Quality & operations",
+      "category": "Model evaluations",
+      "selection": "Alternative",
+      "fit": "Open-source tracing and evaluation for LLM and retrieval workflows.",
+      "tradeoff": "Trace visibility requires privacy controls and calibrated human labels.",
+      "prompt": "Compare groundedness and tool success by model, dataset version and retrieval strategy.",
+      "source": "https://arize.com/docs/phoenix"
+    },
+    {
+      "name": "Ragas",
+      "layer": "Quality & operations",
+      "category": "Model evaluations",
+      "selection": "Alternative",
+      "fit": "Evaluations of retrieval-augmented answers and evidence quality.",
+      "tradeoff": "Judge-model scores can be biased or unstable across upgrades.",
+      "prompt": "Hold evidence fixed, calibrate against human labels and report disagreement on hard examples.",
+      "source": "https://docs.ragas.io/en/stable/"
+    },
+    {
+      "name": "OpenLLMetry",
+      "layer": "Quality & operations",
+      "category": "Observability",
+      "selection": "Alternative",
+      "fit": "LLM-specific instrumentation layered onto OpenTelemetry export pipelines.",
+      "tradeoff": "Instrumentation can capture sensitive request or response content if left unchecked.",
+      "prompt": "Define the content capture policy and verify a synthetic sensitive marker never reaches the exporter.",
+      "source": "https://github.com/traceloop/openllmetry"
+    },
+    {
+      "name": "Great Expectations",
+      "layer": "Quality & operations",
+      "category": "Data validation",
+      "selection": "Specialist",
+      "fit": "Checking batch or analytical data assumptions before dependent workflows consume it.",
+      "tradeoff": "Freshness, business validity and expectation ownership still need agreement.",
+      "prompt": "Quarantine an invalid batch, record the failing expectation and preserve last-known-good data.",
+      "source": "https://docs.greatexpectations.io/docs/core/introduction/"
+    },
+    {
+      "name": "OpenSLO",
+      "layer": "Quality & operations",
+      "category": "Reliability",
+      "selection": "Alternative",
+      "fit": "A portable way to express service-level objectives and their indicators.",
+      "tradeoff": "Backend capabilities and alert translation need testing in the actual monitoring system.",
+      "prompt": "Define admission latency and successful completion as separate SLIs with agreed measurement windows.",
+      "source": "https://openslo.com/"
+    },
+    {
+      "name": "OAuth 2.0 Security BCP",
+      "layer": "Security",
+      "category": "Identity & sessions",
+      "selection": "Default",
+      "fit": "A current baseline for evaluating delegated authorization flows and client behavior.",
+      "tradeoff": "Map the recommendations to your client type, identity provider and supported flows.",
+      "prompt": "Document redirect validation, token audience, PKCE and token storage for the selected client.",
+      "source": "https://www.rfc-editor.org/rfc/rfc9700"
+    },
+    {
+      "name": "WebAuthn",
+      "layer": "Security",
+      "category": "Identity & sessions",
+      "selection": "Alternative",
+      "fit": "Public-key credentials for user authentication, including passkey-capable journeys.",
+      "tradeoff": "Enrollment, recovery, device availability and accessibility affect adoption.",
+      "prompt": "Design registration, sign-in, lost-device recovery and fallback ownership as one journey.",
+      "source": "https://www.w3.org/TR/webauthn-3/"
+    },
+    {
+      "name": "SCIM",
+      "layer": "Security",
+      "category": "Identity & sessions",
+      "selection": "Specialist",
+      "fit": "Tenant provisioning and deprovisioning between an enterprise IdP and SaaS.",
+      "tradeoff": "Sync lag and group mappings complicate immediate access revocation.",
+      "prompt": "Show how disabling a directory account revokes active access and queued approvals.",
+      "source": "https://www.rfc-editor.org/rfc/rfc7644"
+    },
+    {
+      "name": "SPIFFE",
+      "layer": "Security",
+      "category": "Workload identity",
+      "selection": "Specialist",
+      "fit": "Portable workload identity across service boundaries.",
+      "tradeoff": "A trust domain and attestation policy require an operating owner.",
+      "prompt": "Name each worker identity and verify the audience and trust domain before granting a tool.",
+      "source": "https://spiffe.io/docs/latest/spiffe-about/overview/"
+    },
+    {
+      "name": "SPIRE",
+      "layer": "Security",
+      "category": "Workload identity",
+      "selection": "Specialist",
+      "fit": "Issuing and rotating identities for attested workloads in a SPIFFE deployment.",
+      "tradeoff": "Trust bootstrap and agent availability are infrastructure dependencies.",
+      "prompt": "Define node and workload attestation plus the behavior when identity renewal is unavailable.",
+      "source": "https://spiffe.io/docs/latest/spire-about/"
+    },
+    {
+      "name": "Cedar",
+      "layer": "Security",
+      "category": "Authorization",
+      "selection": "Alternative",
+      "fit": "Policy-as-code decisions using principals, actions, resources and context.",
+      "tradeoff": "The application must supply correct entities and enforce every decision.",
+      "prompt": "Evaluate a reviewer action against tenant, case, role and proposal revision immediately before the write.",
+      "source": "https://docs.cedarpolicy.com/"
+    },
+    {
+      "name": "Zanzibar model",
+      "layer": "Security",
+      "category": "Authorization",
+      "selection": "Alternative",
+      "fit": "A reference design for relationship-based authorization at significant scale.",
+      "tradeoff": "Consistency after permission changes matters as much as relationship modeling.",
+      "prompt": "Explain revocation freshness and how nested membership is bounded and tested.",
+      "source": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+    },
+    {
+      "name": "OpenBao",
+      "layer": "Security",
+      "category": "Secrets",
+      "selection": "Alternative",
+      "fit": "Self-managed secret storage, dynamic credentials and leases where operational control is needed.",
+      "tradeoff": "Recovery, unsealing, availability and rotation require a named team.",
+      "prompt": "Describe workload login, scoped lease lifetime, revocation and an outage drill.",
+      "source": "https://openbao.org/docs/"
+    },
+    {
+      "name": "Kyverno",
+      "layer": "Security",
+      "category": "Policy enforcement",
+      "selection": "Alternative",
+      "fit": "Kubernetes admission and policy enforcement for cluster workloads.",
+      "tradeoff": "An overly broad policy can block legitimate deployments or create noisy exceptions.",
+      "prompt": "Start with an owned policy report, test known workloads and explicitly approve enforcement scope.",
+      "source": "https://kyverno.io/docs/"
+    },
+    {
+      "name": "Falco",
+      "layer": "Security",
+      "category": "Runtime detection",
+      "selection": "Specialist",
+      "fit": "Runtime event detection for containerized workloads and operating-system activity.",
+      "tradeoff": "High-volume alerts need tuning, correlation and an investigation owner.",
+      "prompt": "Map one approved detection to an incident runbook and measure false positives on normal batch jobs.",
+      "source": "https://falco.org/docs/"
+    },
+    {
+      "name": "Syft",
+      "layer": "Security",
+      "category": "Supply chain",
+      "selection": "Alternative",
+      "fit": "Software bill of materials generation for built packages and images.",
+      "tradeoff": "Source and final-image inventories can differ.",
+      "prompt": "Generate an SBOM for the release digest and associate the artifact and build metadata.",
+      "source": "https://github.com/anchore/syft"
+    },
+    {
+      "name": "OSV-Scanner",
+      "layer": "Security",
+      "category": "Supply chain",
+      "selection": "Alternative",
+      "fit": "Dependency vulnerability screening against machine-readable advisories.",
+      "tradeoff": "Reachability and business exposure still require triage.",
+      "prompt": "Record affected package, shipped artifact, advisory revision and the owner of a remediation decision.",
+      "source": "https://google.github.io/osv-scanner/"
+    },
+    {
+      "name": "OpenSSF Scorecard",
+      "layer": "Security",
+      "category": "Supply chain",
+      "selection": "Alternative",
+      "fit": "Comparing observable repository security practices before adopting a dependency.",
+      "tradeoff": "Scores can lag or misrepresent project context and are insufficient on their own.",
+      "prompt": "Review the underlying checks, maintainer activity, provenance and unresolved findings.",
+      "source": "https://scorecard.dev/"
+    },
+    {
+      "name": "NIST Zero Trust Architecture",
+      "layer": "Security",
+      "category": "Security architecture",
+      "selection": "Alternative",
+      "fit": "A reference for resource-centric access decisions across users, devices and workloads.",
+      "tradeoff": "A design principle requires an inventory of resources, policy points and actual enforcement.",
+      "prompt": "Mark policy decision, enforcement, identity evidence and audit boundaries on the architecture diagram.",
+      "source": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    },
+    {
+      "name": "OWASP SAMM",
+      "layer": "Security",
+      "category": "Security governance",
+      "selection": "Alternative",
+      "fit": "Assessing maturity and prioritizing improvements to a software security program.",
+      "tradeoff": "Maturity levels measure practices and require evidence from teams.",
+      "prompt": "Select an improvement under design, implementation or verification with owner, evidence and target date.",
+      "source": "https://owaspsamm.org/model/"
+    },
+    {
+      "name": "OWASP Cheat Sheet Series",
+      "layer": "Security",
+      "category": "Security architecture",
+      "selection": "Default",
+      "fit": "Practical defensive reference material for sessions, authorization, uploads and logging.",
+      "tradeoff": "Select guidance relevant to your stack and threat model.",
+      "prompt": "Map three concrete controls to their enforcement location and a non-destructive acceptance check.",
+      "source": "https://cheatsheetseries.owasp.org/"
+    },
+    {
+      "name": "WCAG 2.2",
+      "layer": "UX & customer experience",
+      "category": "Accessibility",
+      "selection": "Default",
+      "fit": "Designing and evaluating accessible web content against defined success criteria.",
+      "tradeoff": "Conformance requires evaluation of actual journeys, components and supported technology.",
+      "prompt": "Specify keyboard completion, visible focus, input assistance, zoom and motion alternatives for the core task.",
+      "source": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "name": "ARIA APG",
+      "layer": "UX & customer experience",
+      "category": "Accessibility",
+      "selection": "Default",
+      "fit": "Established keyboard interaction and semantics for widgets such as dialogs, tabs and grids.",
+      "tradeoff": "Applying a role without its expected behavior can worsen accessibility.",
+      "prompt": "Compare the custom dialog against the APG keyboard and focus pattern with real assistive technology.",
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/"
+    },
+    {
+      "name": "WAI Easy Checks",
+      "layer": "UX & customer experience",
+      "category": "Accessibility",
+      "selection": "Alternative",
+      "fit": "An introductory review of headings, contrast, text alternatives and keyboard behavior.",
+      "tradeoff": "Preliminary checks cover only part of an accessibility evaluation.",
+      "prompt": "Use the easy checks for triage, then schedule deeper manual coverage of the critical task.",
+      "source": "https://www.w3.org/WAI/test-evaluate/preliminary/"
+    },
+    {
+      "name": "GOV.UK Service Manual",
+      "layer": "UX & customer experience",
+      "category": "Service design",
+      "selection": "Default",
+      "fit": "Researching, designing, operating and measuring end-to-end transactional services.",
+      "tradeoff": "Adapt service ownership and channel assumptions to your organization.",
+      "prompt": "Map the customer's goal, assisted channel, operational dependency and service outcome.",
+      "source": "https://www.gov.uk/service-manual"
+    },
+    {
+      "name": "18F Methods",
+      "layer": "UX & customer experience",
+      "category": "UX research",
+      "selection": "Alternative",
+      "fit": "Practical methods for discovery, synthesis, prototyping and evaluation.",
+      "tradeoff": "Choose the method around a decision and the evidence you need.",
+      "prompt": "Write a research question, recruitment criteria, session protocol and how the findings change a decision.",
+      "source": "https://guides.18f.org/methods/"
+    },
+    {
+      "name": "HEART framework",
+      "layer": "UX & customer experience",
+      "category": "Experience measurement",
+      "selection": "Default",
+      "fit": "Translating product goals into experience signals and metrics.",
+      "tradeoff": "A broad framework still needs a baseline, denominator and action threshold.",
+      "prompt": "Map onboarding success to observable task completion, repeat use and a countermetric for support burden.",
+      "source": "https://research.google/pubs/measuring-the-user-experience-on-a-large-scale-user-centered-metrics-for-web-applications/"
+    },
+    {
+      "name": "Nielsen usability heuristics",
+      "layer": "UX & customer experience",
+      "category": "Usability review",
+      "selection": "Alternative",
+      "fit": "A structured expert review of visibility, control, errors and consistency.",
+      "tradeoff": "An expert critique cannot establish how frequently real users fail.",
+      "prompt": "Attach a screen, user task, severity rationale and a proposed validation method to every issue.",
+      "source": "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    },
+    {
+      "name": "Service blueprinting",
+      "layer": "UX & customer experience",
+      "category": "Service design",
+      "selection": "Default",
+      "fit": "Connecting customer actions to frontstage responses, backstage work and support systems.",
+      "tradeoff": "A blueprint needs owners and recovery paths at cross-team handoffs.",
+      "prompt": "Trace a missed appointment from customer notification through agent review to confirmed resolution.",
+      "source": "https://www.nngroup.com/articles/service-blueprints-definition/"
+    },
+    {
+      "name": "W3C internationalization",
+      "layer": "UX & customer experience",
+      "category": "Localization",
+      "selection": "Alternative",
+      "fit": "Guidance for language metadata, directionality, multilingual layout and text handling.",
+      "tradeoff": "Translation alone cannot establish bidirectional or locale behavior.",
+      "prompt": "Verify mixed Arabic text, Latin case IDs, numbers, dates and keyboard navigation in context.",
+      "source": "https://www.w3.org/International/techniques/authoring-html"
+    },
+    {
+      "name": "Microsoft Inclusive Design",
+      "layer": "UX & customer experience",
+      "category": "Inclusive design",
+      "selection": "Alternative",
+      "fit": "Identifying mismatches between human abilities, context and product assumptions.",
+      "tradeoff": "The method works best with participation from people experiencing the exclusion.",
+      "prompt": "Recruit across permanent, temporary and situational constraints and retest the highest-friction task.",
+      "source": "https://inclusive.microsoft.design/"
+    }
+  ]
+}
