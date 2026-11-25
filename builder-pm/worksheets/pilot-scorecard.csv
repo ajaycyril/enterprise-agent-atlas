@@ -1,0 +1,6 @@
+"measure","numerator","denominator","source","release_rule","owner","observed_result"
+"Verified resolution rate","Cases with valid receipt within review window","Eligible cases","Booking and case records","Compare baseline on the same cohort definitions","Product","Unmeasured"
+"False confirmations","Customer confirmations without an authoritative reservation","All cases checked","Receipt and customer message","Any observed case blocks expansion in this example","Booking Ops","Unmeasured"
+"Duplicate applied effects","Excess applied reservations for one logical effect","Replayed and retried scenarios","Provider ledger","Any observed case blocks expansion in this example","Service owner","Unmeasured"
+"Human handling minutes","Total recorded review and follow-up minutes","Eligible cases","Service desk","Agree a cap before pilot","Operations","Unmeasured"
+"Cost per verified outcome","All allocated pilot spend including unsuccessful attempts","Verified resolutions","Finance and receipt records","Compare marginal and fully loaded cost separately","Finance","Unmeasured"

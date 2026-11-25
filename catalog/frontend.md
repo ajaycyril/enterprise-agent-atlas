@@ -7,7 +7,7 @@ parent: "Library catalog"
 
 # Frontend
 
-68 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
+71 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
 
 ## App foundations
 
@@ -706,3 +706,35 @@ parent: "Library catalog"
 > Specify semantic color and motion tokens once and validate aliases before generating platform values.
 
 [Official reference](https://www.designtokens.org/tr/2025.10/format/)
+
+## Dense timelines and event history
+
+### uPlot
+
+**Specialist.** Render compact time-series charts for event rates, latency or queue depth.
+
+**Tradeoff.** Charts need units, zoom behavior and an accessible summary. Keep high-cardinality labels out of the overview.
+
+> Plot actual queue age by time and provide the latest value, unit and timestamp in text.
+
+[Official reference](https://github.com/leeoniya/uPlot)
+
+### vis-timeline
+
+**Alternative.** Show ranges and point events for work that spans people, services and time zones.
+
+**Tradeoff.** Overlapping items and rescheduling need stable identifiers and explicit time-zone policy.
+
+> Show approval waits and tool attempts on separate rows and preserve their IDs after reconnect.
+
+[Official reference](https://visjs.github.io/vis-timeline/docs/timeline/)
+
+### React Virtuoso
+
+**Alternative.** Virtualize a long activity feed with variable-height rows.
+
+**Tradeoff.** New events should not pull an operator away from a historical record being inspected.
+
+> Append 100 fixture events while the user reads an older row, preserving position and keyboard focus.
+
+[Official reference](https://virtuoso.dev/)

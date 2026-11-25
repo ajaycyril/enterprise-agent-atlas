@@ -1,0 +1,5 @@
+"candidate","requirement","mandatory","evidence_requested","test","owner","result","decision"
+"Candidate A","Approved processing region","yes","Contract clause and deployment configuration","Trace standard request and failover route","Security and procurement","Unknown","Hold"
+"Candidate A","Export and exit","yes","Export spec and representative archive","Reconstruct a run and receipt from a clean environment","Platform","Unknown","Hold"
+"Candidate A","Tenant-specific audit export","yes","Schema and edition entitlement","Export one tenant and check scope","Security","Unknown","Hold"
+"Candidate B","Recurring cost","no","Cost at pilot and peak volume","Calculate cost per verified outcome","Finance","Unknown","Review alongside mandatory gates"

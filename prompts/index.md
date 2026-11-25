@@ -8,7 +8,7 @@ has_children: true
 
 # Prompt collection
 
-**40 task pairs, 80 model-specific prompts and seven original full-project briefs.** Each pair includes a Claude version and a ChatGPT version. The two versions share a concrete output and an acceptance condition.
+**50 task pairs, 100 model-specific prompts and seven original full-project briefs.** Each pair includes a Claude version and a ChatGPT version. The two versions share a concrete output and an acceptance condition.
 
 [Which Claude or ChatGPT model should I use?](model-guide.md) · [Download the paired prompts as JSON](recipes.json)
 
@@ -22,6 +22,7 @@ has_children: true
 | [Agent workflows](agent-workflows-recipes.md) | 4 | Choose a bounded harness, Evaluate retrieval and citations, Control tool and model budgets |
 | [Delivery and operations](delivery-and-operations-recipes.md) | 3 | Specify an enterprise release gate, Design a pilot and rollout, Plan an incident and support handover |
 | [Project building](project-building-recipes.md) | 2 | Write the smallest credible project brief, Choose references for a coding model |
+| [Builder PM decisions](builder-pm-recipes.md) | 10 | Fund a pilot, evaluate vendors, track verified outcome cost, govern data, recover customer cases |
 
 ## Evaluation prompts
 

@@ -7,7 +7,7 @@ parent: "Prompt collection"
 
 # Prompting Claude and ChatGPT for project work
 
-Reviewed 25 November 2026. The [40 task pairs](index.md) are written for the model families below. They are informed by the vendors’ prompting guidance. Comparative quality, cost and latency have to be measured on your own tasks.
+Reviewed 25 November 2026. The [50 task pairs](index.md) are written for the model families below. They are informed by the vendors’ prompting guidance. Comparative quality, cost and latency have to be measured on your own tasks.
 
 | Surface | Model choice for this collection | How to adapt the prompt |
 |---|---|---|

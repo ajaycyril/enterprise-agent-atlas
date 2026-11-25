@@ -7,7 +7,7 @@ parent: "Library catalog"
 
 # Security
 
-28 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
+32 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
 
 ## Identity & access
 
@@ -310,3 +310,45 @@ parent: "Library catalog"
 > Select an improvement under design, implementation or verification with owner, evidence and target date.
 
 [Official reference](https://owaspsamm.org/model/)
+
+## Privacy and release evidence
+
+### Microsoft Presidio
+
+**Alternative.** Identify and anonymize selected sensitive fields in text before secondary use.
+
+**Tradeoff.** Recognition varies by language and entity. Test local names and account formats with synthetic fixtures.
+
+> Compare missed and unnecessary redactions on approved Arabic and English examples.
+
+[Official reference](https://microsoft.github.io/presidio/)
+
+### TruffleHog
+
+**Alternative.** Check authorized repositories and build inputs for exposed secrets as part of release hygiene.
+
+**Tradeoff.** Treat findings as sensitive and establish who can rotate affected credentials.
+
+> Specify a release gate and the incident owner for a seeded test credential without printing the value.
+
+[Official reference](https://github.com/trufflesecurity/trufflehog)
+
+### OWASP Threat Dragon
+
+**Alternative.** Document system data flows, trust boundaries and defensive controls during design.
+
+**Tradeoff.** A diagram goes stale as tools and data sources change. Review it alongside the deployment diff.
+
+> Trace a customer lookup and an approval through the system and identify the enforcement point on each boundary.
+
+[Official reference](https://owasp.org/www-project-threat-dragon/)
+
+### in-toto
+
+**Specialist.** Record and verify attestations about how software artifacts were produced.
+
+**Tradeoff.** An attestation is only useful when deployment verifies trusted identities and the intended artifact digest.
+
+> Describe which release evidence the deployment checks before admitting a worker image.
+
+[Official reference](https://in-toto.io/)

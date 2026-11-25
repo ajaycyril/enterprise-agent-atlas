@@ -1,0 +1,3 @@
+"cohort","eligible_cases","verified_resolutions","model_tools_AED","platform_AED","human_minutes","AED_per_minute","total_delivery_AED","AED_per_verified_resolution","scope"
+"Current service","1000","800","0","100","600","2","1300","1.625","Illustrative; same observation window; implementation cost excluded."
+"Assisted pilot","1000","850","400","150","300","2","1150","1.353","Model/tool charges include retries; unit cost rounded to three decimals."

@@ -7,7 +7,7 @@ parent: "Library catalog"
 
 # System design
 
-37 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
+42 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
 
 ## APIs & modeling
 
@@ -392,3 +392,55 @@ parent: "Library catalog"
 > Expose the team's runbook, service owner, SLO and escalation path on one catalog record.
 
 [Official reference](https://backstage.io/docs/overview/what-is-backstage/)
+
+## Data movement and contracts
+
+### Airbyte
+
+**Alternative.** Ingest operational records into an analytical store using source and destination connectors.
+
+**Tradeoff.** Check incremental cursors, deletes and schema drift for each connector before trusting the copy.
+
+> Reconcile a changed appointment, a deletion and two syncs that overlap.
+
+[Official reference](https://docs.airbyte.com/)
+
+### dbt
+
+**Default.** Transform analytical data into documented, testable models for product reporting.
+
+**Tradeoff.** Late receipts change attribution. Version the metric and define when prior periods can be restated.
+
+> Build a unique case-level result from attempts, receipts and support closures.
+
+[Official reference](https://github.com/dbt-labs/dbt)
+
+### OpenLineage
+
+**Specialist.** Describe lineage between jobs, runs and datasets across participating systems.
+
+**Tradeoff.** Missing integrations leave gaps. Verify the path of a single record rather than assuming universal coverage.
+
+> Map the sources behind a changed pilot metric and mark any uninstrumented hop.
+
+[Official reference](https://openlineage.io/docs/)
+
+### DataHub
+
+**Alternative.** Catalog datasets, ownership and lineage for discovery and governance.
+
+**Tradeoff.** A stale owner or incomplete ingestion makes a search result misleading. Set a freshness expectation.
+
+> Find the owner of the booking metric, its underlying data and the last successful ingestion.
+
+[Official reference](https://docs.datahub.com/docs/)
+
+### Flyway
+
+**Alternative.** Manage versioned relational database migrations with an established migration workflow.
+
+**Tradeoff.** A migration history cannot make a destructive schema change reversible. Rehearse old-reader compatibility and restoration.
+
+> Stage an additive receipt column, backfill it and verify that the prior app version still works.
+
+[Official reference](https://documentation.red-gate.com/flyway)

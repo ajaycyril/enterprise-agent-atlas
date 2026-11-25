@@ -1,0 +1,4 @@
+"asset","authoritative_owner","scope_key","access_check","derived_copies","retention_decision","deletion_evidence"
+"Policy document","Policy owner","tenant_id + revision","Fetch and citation open","chunks; search index; answer cache","Set by owner and contract","Source and derived deletion report"
+"Booking receipt","Booking provider","tenant_id + booking_id","Receipt lookup at service","case reference; audited receipt pointer","Confirm with service owner","Retention or approved exception record"
+"Agent run trace","Platform team","tenant_id + run_id","Operations role with scoped access","collector; exporter; incident sample","Set per field and purpose","Synthetic marker absent or expiry verified"

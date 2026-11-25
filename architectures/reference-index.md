@@ -24,5 +24,9 @@ Start with the workload and compare its state owner, trust boundary and failure 
 | [Progressive delivery for a shared platform](references/progressive-delivery-for-a-shared-platform.md) | A platform team must ship schema and workflow revisions while active cases continue. |
 | [Analytics and the customer journey](references/analytics-and-the-customer-journey.md) | A product team wants to understand onboarding abandonment without leaking customer information into analytics. |
 | [Secure tool gateway and human approval](references/secure-tool-gateway-and-human-approval.md) | Agents can propose a change to an external business system. A separately authorized human must decide whether it proceeds. |
+| [Metered AI service and tenant budgets](references/metered-ai-service.md) | An AI supplier bills per attempt. Your customer pays per completed case. How do you reconcile those units without billing twice? |
+| [Document revision, access and deletion](references/policy-document-lifecycle.md) | A partner revises its cancellation policy. How do you stop an assistant from quoting yesterday’s fee? |
+| [Shadow pilot and human recovery](references/shadow-pilot-human-recovery.md) | How can the team compare a new agent against the current service without letting the experiment change a customer’s booking? |
+| [AI assistant and service-desk handoff](references/enterprise-service-desk-handoff.md) | A user hands a failed digital interaction to a call-center agent. What is the smallest record that lets the conversation continue? |
 
 [Three execution-stack blueprints](choose-a-stack.md) · [24 reusable system patterns](pattern-library.md) · [Three basic security architectures](../operations/security-foundations.md)

@@ -7,7 +7,7 @@ parent: "Library catalog"
 
 # Quality & operations
 
-22 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
+27 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
 
 ## Testing
 
@@ -242,3 +242,55 @@ parent: "Library catalog"
 > Define admission latency and successful completion as separate SLIs with agreed measurement windows.
 
 [Official reference](https://openslo.com/)
+
+## Evaluation and cost investigation
+
+### DeepEval
+
+**Alternative.** Write LLM evaluation tests alongside Python development and CI workflows.
+
+**Tradeoff.** Judge-based metrics need calibration. Keep deterministic checks for receipts and permissions.
+
+> Report a grader disagreement and one policy violation separately from the mean answer score.
+
+[Official reference](https://deepeval.com/docs/getting-started)
+
+### Braintrust
+
+**Alternative.** Compare experiments on versioned datasets and examine individual cases and traces.
+
+**Tradeoff.** Review retention and project access before sending production examples or prompts.
+
+> Compare the same 20 redacted cases and show the three outcomes that changed the release decision.
+
+[Official reference](https://www.braintrust.dev/docs)
+
+### LangSmith
+
+**Alternative.** Inspect traced executions and evaluate different versions against labeled examples.
+
+**Tradeoff.** Telemetry can include customer material. Choose export fields, sampling and retention explicitly.
+
+> Turn one reviewed failure into an offline case with a reference answer and authoritative final state.
+
+[Official reference](https://docs.langchain.com/langsmith/evaluation)
+
+### Inspect AI
+
+**Specialist.** Build repeatable model evaluation tasks with datasets, solvers and scorers in Python.
+
+**Tradeoff.** A benchmark task needs a fixture that reflects what your product is allowed to do.
+
+> Define a booking task with a simulated lookup tool and a scorer for false confirmations.
+
+[Official reference](https://inspect.aisi.org.uk/)
+
+### OpenCost
+
+**Specialist.** Allocate Kubernetes infrastructure costs when teams share a cluster.
+
+**Tradeoff.** Shared idle capacity and provider charges outside the cluster need explicit treatment.
+
+> Show allocated, shared and uncovered costs before comparing two inference deployments.
+
+[Official reference](https://opencost.io/docs/)

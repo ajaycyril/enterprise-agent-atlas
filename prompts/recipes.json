@@ -280,6 +280,76 @@
       "claude": "<project>\nA builder has screenshots, component docs and a system diagram but little time to explain them.\nProject-specific inputs: [paste your environment, constraints and evidence here].\n</project>\n\n<assignment>\nPrepare an annotated reference pack with behavior to borrow, ownership boundary, adaptation and test. Compare what each source demonstrates with what the builder merely infers, then fill gaps with explicit requirements.\n</assignment>\n\n<done_when>\nEvery reference answers a project decision; include manual checks for any visual claim. Label missing evidence and complete the requested artifact using explicit assumptions where possible.\n</done_when>",
       "chatgpt": "Goal: A builder has screenshots, component docs and a system diagram but little time to explain them.\nMy inputs: [attach the relevant brief, screenshots, records or constraints].\n\nDeliver an annotated reference pack with behavior to borrow, ownership boundary, adaptation and test. Give a three-reference starter pack, a prompt fragment for each and a check that the result fits the actual task.\n\nAcceptance condition: Every reference answers a project decision; include manual checks for any visual claim. Distinguish observed facts, proposed decisions and tests that still need to run.",
       "acceptance": "Every reference answers a project decision; include manual checks for any visual claim."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Decide whether to fund a pilot",
+      "claude": "<inputs>\nCurrent journey, representative tickets, current costs and intended users. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nTake the service owner’s perspective. Compare a form change, a rules change and a bounded agent. Identify the single most consequential assumption and design a cheap test that could reject the agent option.\n</task>\n\n<acceptance>\nA reader can choose an option and identify the evidence that would reverse it. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Return a one-page investment note with the three options, evidence for and against each, smallest reversible experiment, explicit exclusions and a stop rule.\n\nInputs: Current journey, representative tickets, current costs and intended users. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: A reader can choose an option and identify the evidence that would reverse it. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "A reader can choose an option and identify the evidence that would reverse it."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Define a measurable customer promise",
+      "claude": "<inputs>\nCase events, customer messages, partner receipts and support resolution policy. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nFollow one case from entry to confirmed service outcome. Mark where channels disagree, identify a denominator that includes abandonment, and explain which event proves success.\n</task>\n\n<acceptance>\nA support-assisted success and a false confirmation are classified correctly using the same rule. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Produce a metric contract with eligibility, numerator, denominator, source of truth, attribution window, late events and examples that must be excluded.\n\nInputs: Case events, customer messages, partner receipts and support resolution policy. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: A support-assisted success and a false confirmation are classified correctly using the same rule. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "A support-assisted success and a false confirmation are classified correctly using the same rule."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Write a vendor evaluation the team can run",
+      "claude": "<inputs>\nTwo vendor options, contractual requirements, permitted data classes and a pilot workload. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nEvaluate mandatory gates first. For each remaining option specify a proof request, a failure drill, an exit test and the person responsible for reviewing it.\n</task>\n\n<acceptance>\nUnknown residency or deletion evidence cannot be averaged into a passing score. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Deliver a procurement scorecard with pass, fail or unknown for each mandatory condition. Compare qualified options on total cost and demonstrated fit. List contract items for human review.\n\nInputs: Two vendor options, contractual requirements, permitted data classes and a pilot workload. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: Unknown residency or deletion evidence cannot be averaged into a passing score. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "Unknown residency or deletion evidence cannot be averaged into a passing score."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Calculate cost per verified outcome",
+      "claude": "<inputs>\nInvoice components, eligible cases, authoritative receipts, handling minutes, reattempts and support rate. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nReconcile costs to outcomes. Work the arithmetic with units, expose shared cost allocation and test one sensitivity in human workload. Distinguish freed capacity from cash savings.\n</task>\n\n<acceptance>\nThe arithmetic reconciles to totals and zero verified outcomes returns an undefined unit cost. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Build a baseline-versus-pilot cost table showing attempts, successful cases, spend on all cases, cost per verified case and break-even handling minutes. Mark missing inputs and unpriced work.\n\nInputs: Invoice components, eligible cases, authoritative receipts, handling minutes, reattempts and support rate. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: The arithmetic reconciles to totals and zero verified outcomes returns an undefined unit cost. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "The arithmetic reconciles to totals and zero verified outcomes returns an undefined unit cost."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Design a trusted document lifecycle",
+      "claude": "<inputs>\nTwo versions of a policy, tenant access grants, ingestion route, cache and backup policy. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nTrace one revised fee, one removed exemption and one revoked role from source through citation. Assign owners for each derivative, fallback and expiry.\n</task>\n\n<acceptance>\nA reviewer can prove which policy a tenant could see at the time of a recommendation. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Return a document lifecycle diagram, field inventory and acceptance tests for revision, revocation and deletion, including a partial failure and a retained-backup exception.\n\nInputs: Two versions of a policy, tenant access grants, ingestion route, cache and backup policy. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: A reviewer can prove which policy a tenant could see at the time of a recommendation. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "A reviewer can prove which policy a tenant could see at the time of a recommendation."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Build an accessible live operator brief",
+      "claude": "<inputs>\nRun events with retries and duplicates, operator task, mobile screenshot and supported languages. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nMap every visible transition to an observed event. Specify keyboard, reduced-motion and Arabic behavior. Show what reconnect changes while a reviewer is reading history.\n</task>\n\n<acceptance>\nAn operator can recover who acted, what evidence arrived and what needs approval without animation. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Give a state table for customer, operator and screen reader plus acceptance checks for delayed delivery, replay, right-to-left layout and interrupted focus.\n\nInputs: Run events with retries and duplicates, operator task, mobile screenshot and supported languages. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: An operator can recover who acted, what evidence arrived and what needs approval without animation. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "An operator can recover who acted, what evidence arrived and what needs approval without animation."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Choose a retrieval investment",
+      "claude": "<inputs>\nLabeled questions, eligible passages, current lexical results, candidate semantic results and cost. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nTrace misses by source availability, access, chunking, ranking and answer formation. Compare lexical and hybrid retrieval on identical authorized evidence.\n</task>\n\n<acceptance>\nEvery counted relevant passage is authorized, current and uniquely identified. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Return a paired case table with recall at the chosen k, supported-claim rate, correct abstention, latency and cost. Include the simplest change worth testing next.\n\nInputs: Labeled questions, eligible passages, current lexical results, candidate semantic results and cost. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: Every counted relevant passage is authorized, current and uniquely identified. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "Every counted relevant passage is authorized, current and uniquely identified."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Design a regional pilot and fallback",
+      "claude": "<inputs>\nPermitted regions, provider capabilities, outage scenario, live-action policy and latency budget. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nTrack where prompts, caches, backups, traces and support access go. Rehearse the primary provider timing out after an action has been proposed.\n</task>\n\n<acceptance>\nNo forbidden region receives data and a fallback cannot cause a duplicate business effect. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Produce a decision table for allowed primary and fallback routes. Give a degraded user-facing response, reconciliation owner and recovery check for each blocked route.\n\nInputs: Permitted regions, provider capabilities, outage scenario, live-action policy and latency budget. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: No forbidden region receives data and a fallback cannot cause a duplicate business effect. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "No forbidden region receives data and a fallback cannot cause a duplicate business effect."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Prepare the support handoff",
+      "claude": "<inputs>\nA pending case, three messages already sent, roles and the actual support search fields. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nRole-play a support agent receiving a customer from another channel. Find the minimal case record, permissions and statement that correctly explains the next step.\n</task>\n\n<acceptance>\nThe second operator can continue from the correct state without re-collecting sensitive context. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Write the customer message, support view, escalation contract and a test in which a second operator opens the case after access changes.\n\nInputs: A pending case, three messages already sent, roles and the actual support search fields. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: The second operator can continue from the correct state without re-collecting sensitive context. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "The second operator can continue from the correct state without re-collecting sensitive context."
+    },
+    {
+      "domain": "Builder PM decisions",
+      "task": "Review a canary and decide whether to expand",
+      "claude": "<inputs>\nBaseline and pilot counts by cohort, critical failures, spend, sample sizes and operator reports. Paste approved project evidence here. Mark absent evidence explicitly.\n</inputs>\n\n<task>\nCompare like cohorts, identify selection effects, read changed cases and distinguish reversible friction from release blockers. Explain whether more observations could alter the decision.\n</task>\n\n<acceptance>\nA reviewer can reproduce the decision and explain what will happen to a pending external write. Separate observed results from proposed tests.\n</acceptance>",
+      "chatgpt": "Return a release decision with paired regressions, uncertainty by slice, rollback trigger, treatment of in-flight cases and the accountable owner.\n\nInputs: Baseline and pilot counts by cohort, critical failures, spend, sample sizes and operator reports. Use the supplied evidence and identify any missing inputs.\n\nAcceptance: A reviewer can reproduce the decision and explain what will happen to a pending external write. Link each material conclusion to an input or an explicitly labeled assumption.",
+      "acceptance": "A reviewer can reproduce the decision and explain what will happen to a pending external write."
     }
   ]
 }

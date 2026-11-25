@@ -7,7 +7,7 @@ parent: "Library catalog"
 
 # Agent execution
 
-33 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
+36 entries · Reviewed 25 November 2026. Each entry includes a use case, the main tradeoff, a prompt fragment and its original reference.
 
 ## Harnesses
 
@@ -354,3 +354,35 @@ parent: "Library catalog"
 > Define allowed UI actions and a text-only fallback for clients without the extension.
 
 [Official reference](https://modelcontextprotocol.io/extensions/apps/overview)
+
+## Document preparation and serving
+
+### LangChain text splitters
+
+**Alternative.** Split long source documents before retrieval while retaining logical sections where possible.
+
+**Tradeoff.** Overlapping chunks can inflate apparent recall. Score against unique source passages and revisions.
+
+> Compare two chunking rules on the same policy questions and count distinct relevant passages.
+
+[Official reference](https://docs.langchain.com/oss/python/integrations/splitters)
+
+### Docling
+
+**Alternative.** Parse structurally complex source documents for retrieval and inspection.
+
+**Tradeoff.** Tables and scans need manual spot checks. Preserve document and page provenance through conversion.
+
+> Show whether a fee and its exception remain linked after parsing the source table.
+
+[Official reference](https://docling-project.github.io/docling/)
+
+### vLLM
+
+**Specialist.** Serve supported model weights when a team owns inference deployment and capacity.
+
+**Tradeoff.** Model license, hardware fit, idle capacity and operations can dominate the business case.
+
+> Estimate the utilization at which a regional deployment beats the managed endpoint on cost per accepted task.
+
+[Official reference](https://docs.vllm.ai/en/latest/)

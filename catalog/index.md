@@ -12,12 +12,13 @@ Choose a layer, then a workload. Each entry explains when a tool earns its place
 
 | Layer | Entries |
 |---|---:|
-| [Frontend](frontend.md) | 68 |
-| [Agent execution](agent-execution.md) | 33 |
-| [System design](system-design.md) | 37 |
-| [Quality & operations](quality-operations.md) | 22 |
-| [Security](security.md) | 28 |
+| [Frontend](frontend.md) | 71 |
+| [Agent execution](agent-execution.md) | 36 |
+| [System design](system-design.md) | 42 |
+| [Quality & operations](quality-operations.md) | 27 |
+| [Security](security.md) | 32 |
 | [UX & customer experience](ux-cx.md) | 10 |
+| [Product & delivery](product-delivery.md) | 12 |
 
 [Downloadable CSV](tools.csv) · [Structured JSON](tools.json) · [Release notes](release-notes.md)
 
